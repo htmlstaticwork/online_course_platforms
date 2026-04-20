@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Gaia Academy</title>
+    <link rel="icon" type="image/png" href="image/favicon.png">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#14532D',
+                        secondary: '#A16207',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body class="bg-gray-50 dark:bg-[#0a110d] transition-colors duration-300">
+
+    <!-- Navbar -->
+    <header
+        class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="image/favicon.png" alt="Logo" class="logo-brand-img group-hover:rotate-12 transition-all">
+                <span class="logo-brand-text text-primary">Gaia Academy</span>
+            </a>
+
+            <ul class="hidden xl:flex items-center gap-8 text-gray-700 font-medium">
+                <li><a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                </li>
+                <li><a href="home2.html" class="hover:text-primary transition-colors">Home2</a>
+                </li>
+                <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
+                <li><a href="courses.html" class="hover:text-primary transition-colors">Courses</a></li>
+                <li><a href="testimonial.html" class="hover:text-primary transition-colors">Testimonial</a></li>
+                <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                <li><a href="instructor.html" class="hover:text-primary transition-colors">Dashboard</a></li>
+
+            </ul>
+
+            <!-- CTAs & Toggles -->
+            <div class="flex items-center gap-4">
+                <div class="hidden xl:flex items-center gap-3">
+                    <a href="login.html" class="btn-primary-gaia">Login</a>
+                </div>
+
+                <div class="hidden xl:flex items-center gap-3">
+                    <button class="theme-toggle w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 hover:bg-gray-100 transition-all border border-gray-100">
+                        <i class="fas fa-moon theme-toggle-icon text-primary text-lg"></i>
+                    </button>
+                    <button class="rtl-toggle w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 hover:bg-gray-100 transition-all border border-gray-100">
+                        <i class="fas fa-right-left rtl-toggle-icon text-primary text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <button class="xl:hidden hamburger-btn p-2 text-primary z-[70] relative">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Premium Full-Screen Mobile Menu -->
+        <div id="mobile-menu" class="hidden xl:hidden">
+            <ul class="flex flex-col gap-8 text-center items-center">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="home2.html">Home 2</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="testimonial.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                
+                <li class="pt-8 border-t border-gray-100 w-full flex flex-col gap-3">
+                    <button
+                        class="theme-toggle flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-gray-50 text-gray-900 font-black uppercase tracking-widest text-xs translate-y-0">
+                        <i class="fas fa-moon theme-toggle-icon text-primary text-lg"></i> Appearance
+                    </button>
+                    <button
+                        class="rtl-toggle flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-gray-50 text-gray-900 font-black uppercase tracking-widest text-xs translate-y-0">
+                        <i class="fas fa-right-left rtl-toggle-icon text-primary text-lg"></i> Reading Direction
+                    </button>
+                </li>
+
+                <li class="flex flex-col gap-4 w-full">
+                    <a href="login.html" class="btn-primary-gaia w-full !py-4">Login</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Premium Page Hero (Enhanced) -->
+    <section class="hero-safe-top pb-32 relative overflow-hidden bg-gradient-to-br from-primary via-green-900 to-green-950 dark:from-[#0a110d] dark:via-green-950/40 dark:to-green-950/20">
+        <!-- Animated Background Pattern -->
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,<svg width=\"100\" height=\"100\" viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"50\" cy=\"50\" r=\"2\" fill=\"white\" opacity=\"0.3\"/></svg>'); background-size: 60px; animation: float 20s ease-in-out infinite;"></div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-32 h-32 bg-secondary/20 rounded-full blur-xl animate-pulse"></div>
+        <div class="absolute bottom-20 right-10 w-40 h-40 bg-green-400/20 rounded-full blur-xl animate-pulse" style="animation-delay: 2s"></div>
+        <div class="absolute top-1/2 left-1/4 w-24 h-24 bg-white/10 rounded-full blur-lg animate-pulse" style="animation-delay: 4s"></div>
+        
+        <div class="container mx-auto px-4 text-center max-w-5xl relative z-10">
+            <!-- Status Badge -->
+            <div class="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full text-white text-xs font-black uppercase tracking-[0.3em] mb-8 border border-white/20">
+                <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                Available 24/7 Support
+            </div>
+            
+            <h1 class="text-5xl lg:text-8xl font-black text-white mb-8 tracking-tighter leading-none reveal-on-scroll">
+                Get in <span class="italic font-light font-serif text-secondary">Touch.</span>
+            </h1>
+            
+            <p class="text-xl lg:text-2xl text-white/60 mb-12 max-w-3xl mx-auto reveal-on-scroll" style="animation-delay: 0.1s">
+                Whether you're starting your permaculture journey or scaling your sustainable living project, 
+                our expert team is ready to help you grow.
+            </p>
+            
+            <!-- Quick Contact Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 reveal-on-scroll" style="animation-delay: 0.2s">
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                    <div class="text-3xl font-black text-white mb-1">&lt;2hrs</div>
+                    <div class="text-sm text-white/60 uppercase tracking-widest">Avg Response Time</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                    <div class="text-3xl font-black text-white mb-1">98%</div>
+                    <div class="text-sm text-white/60 uppercase tracking-widest">Satisfaction Rate</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                    <div class="text-3xl font-black text-white mb-1">24/7</div>
+                    <div class="text-sm text-white/60 uppercase tracking-widest">Live Support</div>
+                </div>
+            </div>
+            
+            <!-- Enhanced Social Icons -->
+            <div class="flex justify-center gap-6 reveal-on-scroll" style="animation-delay: 0.3s">
+                <a href="#" class="group relative w-14 h-14 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all duration-500 border border-white/20 hover:scale-110">
+                    <i class="fab fa-instagram text-lg"></i>
+                    <span class="absolute -bottom-8 text-xs text-white/60 opacity-0 group-hover:opacity-100 transition-opacity">Instagram</span>
+                </a>
+                <a href="#" class="group relative w-14 h-14 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all duration-500 border border-white/20 hover:scale-110">
+                    <i class="fab fa-twitter text-lg"></i>
+                    <span class="absolute -bottom-8 text-xs text-white/60 opacity-0 group-hover:opacity-100 transition-opacity">Twitter</span>
+                </a>
+                <a href="#" class="group relative w-14 h-14 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all duration-500 border border-white/20 hover:scale-110">
+                    <i class="fab fa-youtube text-lg"></i>
+                    <span class="absolute -bottom-8 text-xs text-white/60 opacity-0 group-hover:opacity-100 transition-opacity">YouTube</span>
+                </a>
+                <a href="#" class="group relative w-14 h-14 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-primary transition-all duration-500 border border-white/20 hover:scale-110">
+                    <i class="fab fa-linkedin-in text-lg"></i>
+                    <span class="absolute -bottom-8 text-xs text-white/60 opacity-0 group-hover:opacity-100 transition-opacity">LinkedIn</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Enhanced Background Orbs -->
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-30"></div>
+        <div class="absolute top-20 right-0 w-80 h-80 bg-secondary rounded-full blur-[100px] opacity-20"></div>
+        <div class="absolute bottom-0 left-1/2 w-64 h-64 bg-green-400 rounded-full blur-[80px] opacity-10"></div>
+    </section>
+
+    <!-- Enhanced Contact Form Section -->
+    <section class="py-24 relative -mt-32 z-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white dark:bg-gray-900 backdrop-blur-xl p-8 lg:p-20 rounded-[4rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border border-gray-100 dark:border-gray-700 reveal-on-scroll">
+                <!-- Form Header -->
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center gap-3 mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-primary to-green-600 rounded-full flex items-center justify-center shadow-lg">
+                            <i class="fas fa-envelope text-white text-xl"></i>
+                        </div>
+                        <div class="text-left">
+                            <h3 class="text-4xl font-black text-gray-900 dark:text-white mb-2 tracking-tight">Send us a message</h3>
+                            <p class="text-base text-primary dark:text-green-400 font-semibold uppercase tracking-wider">We respond within 2 hours</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Options -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+                    <button class="contact-option active p-5 rounded-2xl border-2 border-primary bg-gradient-to-r from-primary/10 to-green-50 dark:from-primary/20 dark:to-green-900/20 text-primary dark:text-green-400 font-semibold transition-all shadow-lg" data-type="consultation">
+                        <i class="fas fa-leaf text-2xl mb-3"></i>
+                        <div class="text-base font-bold">Design Consultation</div>
+                    </button>
+                    <button class="contact-option p-5 rounded-2xl border-2 border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 font-semibold transition-all hover:border-primary/50 hover:bg-primary/5 dark:hover:bg-primary/10 hover:shadow-lg" data-type="support">
+                        <i class="fas fa-headset text-2xl mb-3"></i>
+                        <div class="text-base font-bold">Technical Support</div>
+                    </button>
+                    <button class="contact-option p-5 rounded-2xl border-2 border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 font-semibold transition-all hover:border-primary/50 hover:bg-primary/5 dark:hover:bg-primary/10 hover:shadow-lg" data-type="partnership">
+                        <i class="fas fa-handshake text-2xl mb-3"></i>
+                        <div class="text-base font-bold">Partnership</div>
+                    </button>
+                </div>
+                
+                <form id="contactForm" class="space-y-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="relative">
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-200 uppercase tracking-wider mb-3 px-2">Full Name *</label>
+                            <input type="text" name="name" required placeholder="John Doe" class="w-full px-6 py-4 rounded-2xl bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-600 outline-none focus:ring-2 focus:ring-primary focus:border-transparent h-16 text-base font-medium text-gray-900 dark:text-white transition-all shadow-sm">
+                            <span class="error-message text-red-500 text-sm mt-2 hidden font-medium">Please enter your name</span>
+                        </div>
+                        <div class="relative">
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-200 uppercase tracking-wider mb-3 px-2">Email Address *</label>
+                            <input type="email" name="email" required placeholder="name@example.com" class="w-full px-6 py-4 rounded-2xl bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-600 outline-none focus:ring-2 focus:ring-primary focus:border-transparent h-16 text-base font-medium text-gray-900 dark:text-white transition-all shadow-sm">
+                            <span class="error-message text-red-500 text-sm mt-2 hidden font-medium">Please enter a valid email</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="relative">
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-200 uppercase tracking-wider mb-3 px-2">Phone Number</label>
+                            <input type="tel" name="phone" placeholder="+1 (555) 123-4567" class="w-full px-6 py-4 rounded-2xl bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-600 outline-none focus:ring-2 focus:ring-primary focus:border-transparent h-16 text-base font-medium text-gray-900 dark:text-white transition-all shadow-sm">
+                        </div>
+                       
+                           
+                    </div>
+                    
+                    <div class="relative">
+                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-200 uppercase tracking-wider mb-3 px-2">Message *</label>
+                        <textarea name="message" required rows="6" placeholder="Tell us about your project or how we can help..." class="w-full px-8 py-6 rounded-2xl bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-600 outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-base font-medium leading-relaxed text-gray-900 dark:text-white transition-all resize-none shadow-sm"></textarea>
+                        <div class="flex justify-between items-center mt-3">
+                            <span class="text-sm text-gray-500 dark:text-gray-400 font-medium">Minimum 20 characters</span>
+                            <span class="char-count text-sm font-medium text-gray-500 dark:text-gray-400">0/500</span>
+                        </div>
+                        <span class="error-message text-red-500 text-sm mt-2 hidden font-medium">Message must be at least 20 characters</span>
+                    </div>
+                    
+                    <!-- Attachments -->
+                    <div class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-2xl p-8 text-center hover:border-primary dark:hover:border-green-500 transition-all bg-gray-50 dark:bg-gray-800">
+                        <input type="file" id="fileInput" class="hidden" accept=".pdf,.doc,.docx,.jpg,.png" multiple>
+                        <label for="fileInput" class="cursor-pointer">
+                            <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 dark:text-gray-500 mb-4"></i>
+                            <p class="text-base font-medium text-gray-700 dark:text-gray-300 mb-2">Drop files here or click to upload</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">PDF, DOC, JPG, PNG (max 10MB)</p>
+                        </label>
+                        <div id="fileList" class="mt-6 space-y-3"></div>
+                    </div>
+                    
+                    <!-- Privacy & Submit -->
+                    
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button type="button" class="px-10 py-4 rounded-2xl border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 transition-all shadow-sm">Clear</button>
+                            <button type="submit" class="btn-primary-gaia !px-12 !py-4 shadow-2xl hover:scale-105 transition-all text-sm uppercase tracking-[0.2em] font-black">
+                                <i class="fas fa-paper-plane mr-2"></i> Send Message
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                
+                <!-- Success Message -->
+                <div id="successMessage" class="hidden mt-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-2xl">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                        <div>
+                            <p class="font-medium text-green-800 dark:text-green-200">Message sent successfully!</p>
+                            <p class="text-sm text-green-600 dark:text-green-400">We'll get back to you within 2 hours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Support Info Grid -->
+    <section class="py-24 bg-gray-50/50">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16 reveal-on-scroll">
+                <div class="inline-block px-4 py-1.5 bg-gray-100 rounded-full text-gray-400 text-[10px] font-black uppercase tracking-[0.3em] mb-6">Multiple Ways to Reach Us</div>
+                <h2 class="text-4xl lg:text-6xl font-black text-gray-900 tracking-tighter">Get Support Your Way</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Email Support -->
+                <div class="group p-10 bg-white dark:bg-black/40 rounded-[3rem] border border-gray-100 dark:border-white/5 shadow-sm text-center reveal-on-scroll hover:shadow-2xl hover:border-primary/20 transition-all cursor-pointer">
+                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h5 class="font-black text-xl mb-2 dark:text-white group-hover:text-primary transition-colors">Email Support</h5>
+                    <p class="text-sm text-gray-500 mb-6 font-medium">support@gaiaacademy.com</p>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center justify-center gap-2 text-xs text-gray-400">
+                            <i class="fas fa-clock text-primary"></i>
+                            <span>Response within 2 hours</span>
+                        </div>
+                        <div class="flex items-center justify-center gap-2 text-xs text-gray-400">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>Available 24/7</span>
+                        </div>
+                    </div>
+                    <a href="mailto:support@gaiaacademy.com" class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-primary hover:text-secondary transition-colors group-hover:scale-105">
+                        Send Email <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <!-- Live Chat -->
+                <div class="group p-10 bg-white dark:bg-black/40 rounded-[3rem] border border-gray-100 dark:border-white/5 shadow-sm text-center reveal-on-scroll hover:shadow-2xl hover:border-primary/20 transition-all cursor-pointer" style="animation-delay: 0.1s">
+                    <div class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary text-2xl mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h5 class="font-black text-xl mb-2 dark:text-white group-hover:text-secondary transition-colors">Live Chat</h5>
+                    <p class="text-sm text-gray-500 mb-6 font-medium">Instant support with our team</p>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center justify-center gap-2 text-xs text-gray-400">
+                            <i class="fas fa-bolt text-secondary"></i>
+                            <span>Instant response</span>
+                        </div>
+                        <div class="flex items-center justify-center gap-2 text-xs text-gray-400">
+                            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                            <span>Online now</span>
+                        </div>
+                    </div>
+                    <button class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-secondary hover:text-primary transition-colors group-hover:scale-105">
+                        Start Chat <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Office Locations -->
+                <div class="group p-10 bg-white dark:bg-black/40 rounded-[3rem] border border-gray-100 dark:border-white/5 shadow-sm text-center reveal-on-scroll hover:shadow-2xl hover:border-primary/20 transition-all cursor-pointer" style="animation-delay: 0.2s">
+                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h5 class="font-black text-xl mb-2 dark:text-white group-hover:text-primary transition-colors">Visit Us</h5>
+                    <p class="text-sm text-gray-500 mb-6 font-medium">Byron Bay, NSW, Australia</p>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-center justify-center gap-2 text-xs text-gray-400">
+                            <i class="fas fa-door-open text-primary"></i>
+                            <span>Mon-Fri 9AM-5PM</span>
+                        </div>
+                        <div class="flex items-center justify-center gap-2 text-xs text-gray-400">
+                            <i class="fas fa-phone text-primary"></i>
+                            <span>+61 2 1234 5678</span>
+                        </div>
+                    </div>
+                    <button onclick="showMapModal()" class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-primary hover:text-secondary transition-colors group-hover:scale-105">
+                        View Map <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Help Categories -->
+    <section class="py-24">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal-on-scroll">
+                <div class="inline-block px-4 py-1.5 bg-gray-100 rounded-full text-gray-400 text-[10px] font-black uppercase tracking-[0.3em] mb-6">Support Hub</div>
+                <h2 class="text-4xl lg:text-6xl font-black text-gray-900 tracking-tighter">How Can We Help You?</h2>
+                <p class="text-xl text-gray-500 mt-4 max-w-2xl mx-auto">Choose a category to get specialized support from our expert team</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <!-- Billing & Access -->
+                <div class="help-category bg-white dark:bg-black/40 p-8 rounded-[3rem] text-center reveal-on-scroll border border-gray-50 dark:border-white/5 hover:border-primary/20 hover:shadow-2xl transition-all cursor-pointer group" data-category="billing">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h4 class="font-black text-lg text-gray-900 dark:text-white group-hover:text-primary transition-colors mb-3">Billing & Access</h4>
+                    <p class="text-sm text-gray-500 mb-4">Payment issues, subscription management, course access</p>
+                    <div class="flex items-center justify-center gap-2 text-xs text-primary">
+                        <span>12 articles</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <!-- Technical Support -->
+                <div class="help-category bg-white p-8 rounded-[3rem] text-center reveal-on-scroll border border-gray-50 hover:border-primary/20 hover:shadow-2xl transition-all cursor-pointer group" data-category="technical" style="animation-delay: 0.1s">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h4 class="font-black text-lg text-gray-900 group-hover:text-primary transition-colors mb-3">Technical Support</h4>
+                    <p class="text-sm text-gray-500 mb-4">Platform issues, video playback, account problems</p>
+                    <div class="flex items-center justify-center gap-2 text-xs text-primary">
+                        <span>18 articles</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <!-- Certification & PDC -->
+                <div class="help-category bg-white p-8 rounded-[3rem] text-center reveal-on-scroll border border-gray-50 hover:border-primary/20 hover:shadow-2xl transition-all cursor-pointer group" data-category="certification" style="animation-delay: 0.2s">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4 class="font-black text-lg text-gray-900 group-hover:text-primary transition-colors mb-3">Certification & PDC</h4>
+                    <p class="text-sm text-gray-500 mb-4">PDC requirements, certificates, continuing education</p>
+                    <div class="flex items-center justify-center gap-2 text-xs text-primary">
+                        <span>15 articles</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                
+                <!-- Course Content -->
+                <div class="help-category bg-white p-8 rounded-[3rem] text-center reveal-on-scroll border border-gray-50 hover:border-primary/20 hover:shadow-2xl transition-all cursor-pointer group" data-category="courses" style="animation-delay: 0.3s">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center text-white text-2xl mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h4 class="font-black text-lg text-gray-900 group-hover:text-primary transition-colors mb-3">Course Content</h4>
+                    <p class="text-sm text-gray-500 mb-4">Curriculum, downloads, assignments, projects</p>
+                    <div class="flex items-center justify-center gap-2 text-xs text-primary">
+                        <span>24 articles</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Search -->
+            <div class="mt-16 max-w-2xl mx-auto reveal-on-scroll">
+                <div class="relative">
+                    <input type="text" placeholder="Search for help articles..." class="w-full px-6 py-4 pl-14 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm font-medium dark:text-white transition-all">
+                    <i class="fas fa-search absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary text-white px-6 py-2 rounded-xl text-sm font-medium hover:bg-primary/90 transition-colors">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced FAQ Section -->
+    <section class="py-24 bg-gray-50/50">
+        <div class="container mx-auto px-4">
+             <div class="text-center mb-16 reveal-on-scroll">
+                 <div class="inline-block px-4 py-1.5 bg-gray-100 rounded-full text-gray-400 text-[10px] font-black uppercase tracking-[0.3em] mb-6">Quick Answers</div>
+                 <h2 class="text-4xl lg:text-6xl font-black text-gray-900 tracking-tighter">Frequently Asked Questions</h2>
+                 <p class="text-xl text-gray-500 mt-4 max-w-2xl mx-auto">Get instant answers to common questions about our courses and services</p>
+             </div>
+             <div class="max-w-4xl mx-auto space-y-4 reveal-on-scroll">
+                 <!-- FAQ Categories Tabs -->
+                 <div class="flex flex-wrap justify-center gap-2 mb-8">
+                     <button class="faq-tab active px-6 py-2 rounded-full bg-primary text-white text-sm font-medium transition-all" data-category="general">General</button>
+                     <button class="faq-tab px-6 py-2 rounded-full bg-gray-200 text-gray-600 text-sm font-medium hover:bg-gray-300 transition-all" data-category="courses">Courses</button>
+                     <button class="faq-tab px-6 py-2 rounded-full bg-gray-200 text-gray-600 text-sm font-medium hover:bg-gray-300 transition-all" data-category="certification">Certification</button>
+                     <button class="faq-tab px-6 py-2 rounded-full bg-gray-200 text-gray-600 text-sm font-medium hover:bg-gray-300 transition-all" data-category="technical">Technical</button>
+                 </div>
+                 
+                 <!-- FAQ Items -->
+                 <div class="faq-content" data-category="general">
+                     <details class="group bg-white dark:bg-black/40 rounded-3xl border border-gray-100 dark:border-white/5 overflow-hidden hover:shadow-lg transition-all">
+                         <summary class="flex items-center justify-between p-8 cursor-pointer list-none">
+                             <div class="flex items-center gap-4">
+                                 <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                                     <i class="fas fa-globe text-primary text-sm"></i>
+                                 </div>
+                                 <h5 class="font-black text-lg text-gray-900 dark:text-white">Is the PDC certification globally recognized?</h5>
+                             </div>
+                             <span class="w-8 h-8 rounded-full bg-gray-50 dark:bg-white/5 flex items-center justify-center group-open:rotate-180 transition-transform">
+                                 <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                             </span>
+                         </summary>
+                         <div class="px-8 pb-8">
+                             <p class="text-gray-500 dark:text-gray-400 leading-relaxed">Yes, our Permaculture Design Certificate follows the 72-hour international standard established by Bill Mollison. Our graduates are recognized by design institutes worldwide and can practice permaculture design professionally across the globe.</p>
+                         </div>
+                     </details>
+                     
+                     <details class="group bg-white dark:bg-black/40 rounded-3xl border border-gray-100 dark:border-white/5 overflow-hidden hover:shadow-lg transition-all">
+                        <summary class="flex items-center justify-between p-8 cursor-pointer list-none">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-secondary/10 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-user-graduate text-secondary text-sm"></i>
+                                </div>
+                                <h5 class="font-black text-lg text-gray-900 dark:text-white">Do I need previous experience?</h5>
+                            </div>
+                            <span class="w-8 h-8 rounded-full bg-gray-50 dark:bg-white/5 flex items-center justify-center group-open:rotate-180 transition-transform">
+                                <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                            </span>
+                        </summary>
+                        <div class="px-8 pb-8">
+                            <p class="text-gray-500 dark:text-gray-400 leading-relaxed">No! We have courses ranging from total beginners to professional-grade design workshops. Our introductory courses assume no prior knowledge, while advanced courses build upon foundational concepts. We'll guide you from your first seed to your first masterplan.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="group bg-white dark:bg-black/40 rounded-3xl border border-gray-100 dark:border-white/5 overflow-hidden hover:shadow-lg transition-all">
+                        <summary class="flex items-center justify-between p-8 cursor-pointer list-none">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-clock text-green-600 text-sm"></i>
+                                </div>
+                                <h5 class="font-black text-lg text-gray-900 dark:text-white">How long do I have to complete courses?</h5>
+                            </div>
+                            <span class="w-8 h-8 rounded-full bg-gray-50 dark:bg-white/5 flex items-center justify-center group-open:rotate-180 transition-transform">
+                                <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                            </span>
+                        </summary>
+                        <div class="px-8 pb-8">
+                            <p class="text-gray-500 dark:text-gray-400 leading-relaxed">Most courses offer lifetime access with flexible pacing. The PDC course typically takes 3-6 months part-time, but you can take up to 12 months if needed. We believe in learning at your own rhythm, not rushing your connection with nature.</p>
+                        </div>
+                    </details>
+                 </div>
+                 
+                 <!-- Courses Category FAQs (Hidden by default) -->
+                 <div class="faq-content hidden" data-category="courses">
+                     <details class="group bg-white dark:bg-black/40 rounded-3xl border border-gray-100 dark:border-white/5 overflow-hidden hover:shadow-lg transition-all">
+                         <summary class="flex items-center justify-between p-8 cursor-pointer list-none">
+                             <div class="flex items-center gap-4">
+                                 <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                     <i class="fas fa-book text-blue-600 text-sm"></i>
+                                 </div>
+                                 <h5 class="font-black text-lg text-gray-900 dark:text-white">What's included in the course materials?</h5>
+                             </div>
+                             <span class="w-8 h-8 rounded-full bg-gray-50 dark:bg-white/5 flex items-center justify-center group-open:rotate-180 transition-transform">
+                                 <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+                             </span>
+                         </summary>
+                         <div class="px-8 pb-8">
+                             <p class="text-gray-500 dark:text-gray-400 leading-relaxed">All courses include video lessons, downloadable PDFs, practical assignments, design templates, and access to our community forum. Premium courses also include one-on-one mentoring sessions and project reviews.</p>
+                         </div>
+                     </details>
+                 </div>
+                 
+                 <!-- Still have questions CTA -->
+                 <div class="mt-12 text-center p-8 bg-gradient-to-r from-primary to-green-600 rounded-3xl text-white">
+                     <h4 class="text-2xl font-black mb-4">Still have questions?</h4>
+                     <p class="mb-6 opacity-90">Our support team is here to help you 24/7</p>
+                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                         <button class="px-8 py-3 bg-white text-primary rounded-2xl font-medium hover:bg-gray-100 transition-colors">
+                             <i class="fas fa-comments mr-2"></i> Start Live Chat
+                         </button>
+                         <button class="px-8 py-3 bg-transparent border-2 border-white text-white rounded-2xl font-medium hover:bg-white hover:text-primary transition-all">
+                             <i class="fas fa-envelope mr-2"></i> Email Support
+                         </button>
+                     </div>
+                 </div>
+             </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-primary text-white dark:bg-green-950/20">
+        <div class="container mx-auto px-4 text-center">
+             <h2 class="text-3xl font-bold mb-10 reveal-on-scroll">Follow the Green Path</h2>
+             <div class="flex flex-wrap justify-center gap-12 reveal-on-scroll">
+                 <a href="#" class="flex items-center gap-4 text-xl font-bold hover:text-secondary hover:scale-105 transition-all"><i class="fab fa-instagram"></i> Instagram</a>
+                 <a href="#" class="flex items-center gap-4 text-xl font-bold hover:text-secondary hover:scale-105 transition-all"><i class="fab fa-twitter"></i> Twitter</a>
+                 <a href="#" class="flex items-center gap-4 text-xl font-bold hover:text-secondary hover:scale-105 transition-all"><i class="fab fa-youtube"></i> YouTube</a>
+                 <a href="#" class="flex items-center gap-4 text-xl font-bold hover:text-secondary hover:scale-105 transition-all"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+             </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 dark:bg-[#0a110d] border-t border-gray-100 dark:border-white/5 pt-20 pb-10 transition-colors duration-300">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="mobile-center">
+                    <a href="index.html" class="flex items-center gap-2 mb-6 group">
+                        <img src="image/favicon.png" alt="Logo" class="logo-brand-img group-hover:rotate-12 transition-all">
+                        <span class="logo-brand-text text-primary">Gaia Academy</span>
+                    </a>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">Global educational platform for permaculture design and sustainable living principles.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="footer-social-icon dark:bg-white/5 dark:text-white hover:dark:bg-primary"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon dark:bg-white/5 dark:text-white hover:dark:bg-primary"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-icon dark:bg-white/5 dark:text-white hover:dark:bg-primary"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-icon dark:bg-white/5 dark:text-white hover:dark:bg-primary"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6 dark:text-white">Account</h5>
+                    <ul class="space-y-4 text-gray-500 dark:text-gray-400 text-sm">
+                        <li><a href="login.html" class="hover:text-primary transition-colors">Login</a></li>
+                        <li><a href="signup.html" class="hover:text-primary transition-colors">Register</a></li>
+                        <li><a href="instructor.html" class="hover:text-primary transition-colors">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6 dark:text-white">Quick Links</h5>
+                    <ul class="space-y-4 text-gray-500 dark:text-gray-400 text-sm">
+                        <li><a href="courses.html" class="hover:text-primary transition-colors">Course Catalog</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors">Our History</a></li>
+                        <li><a href="testimonial.html" class="hover:text-primary transition-colors">Success Stories</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6 dark:text-white">Popular Topics</h5>
+                    <ul class="space-y-4 text-gray-500 dark:text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-primary transition-colors">Urban Gardening</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Water Harvesting</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Animal Integration</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Composting Pro</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="pt-8 border-t border-gray-100 dark:border-white/5 text-center text-gray-400 dark:text-gray-600 text-xs">
+                © 2026 Gaia Academy. All rights reserved. Designed with ❤️ for the Earth.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Contact Page JavaScript -->
+    <script>
+    // Contact Form Validation and Interactions
+    document.addEventListener('DOMContentLoaded', function() {
+        // Contact Type Selection
+        const contactOptions = document.querySelectorAll('.contact-option');
+        const subjectSelect = document.querySelector('.subject-select');
+        const subjectIcon = document.querySelector('.subject-icon');
+        const subjectDesc = document.querySelector('.subject-desc');
+        
+        if (subjectSelect && subjectIcon && subjectDesc) {
+            subjectSelect.addEventListener('change', function() {
+                const selectedOption = this.options[this.selectedIndex];
+                const icon = selectedOption.getAttribute('data-icon');
+                const desc = selectedOption.getAttribute('data-desc');
+                
+                // Update icon
+                if (icon && desc) {
+                    const iconMap = {
+                        'leaf': '🌿',
+                        'headset': '🎧',
+                        'graduation-cap': '🎓',
+                        'handshake': '🤝',
+                        'comment': '💬'
+                    };
+                    subjectIcon.textContent = iconMap[icon] || '📝';
+                    subjectDesc.textContent = desc;
+                    subjectDesc.classList.remove('italic');
+                } else {
+                    subjectIcon.textContent = '📝';
+                    subjectDesc.textContent = 'Select a subject to see description';
+                    subjectDesc.classList.add('italic');
+                }
+            });
+        }
+        
+        contactOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                contactOptions.forEach(opt => {
+                    opt.classList.remove('active', 'border-primary', 'bg-primary/5', 'text-primary');
+                    opt.classList.add('border-gray-200', 'bg-gray-50', 'text-gray-600');
+                });
+                
+                this.classList.remove('border-gray-200', 'bg-gray-50', 'text-gray-600');
+                this.classList.add('active', 'border-primary', 'bg-primary/5', 'text-primary');
+                
+                // Update subject dropdown
+                const type = this.dataset.type;
+                const typeMap = {
+                    'consultation': 'consultation',
+                    'support': 'support',
+                    'partnership': 'partnership'
+                };
+                
+                if (subjectSelect && typeMap[type]) {
+                    subjectSelect.value = typeMap[type];
+                }
+            });
+        });
+        
+        // Form Validation
+        const form = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+        
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let isValid = true;
+                const errors = form.querySelectorAll('.error-message');
+                errors.forEach(error => error.classList.add('hidden'));
+                
+                // Validate Name
+                const nameInput = form.querySelector('input[name="name"]');
+                if (nameInput.value.trim().length < 2) {
+                    const error = nameInput.parentElement.querySelector('.error-message');
+                    error.classList.remove('hidden');
+                    isValid = false;
+                }
+                
+                // Validate Email
+                const emailInput = form.querySelector('input[name="email"]');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailInput.value)) {
+                    const error = emailInput.parentElement.querySelector('.error-message');
+                    error.classList.remove('hidden');
+                    isValid = false;
+                }
+                
+                // Validate Subject
+                const subjectInput = form.querySelector('select[name="subject"]');
+                if (!subjectInput.value) {
+                    const error = subjectInput.parentElement.querySelector('.error-message');
+                    error.classList.remove('hidden');
+                    isValid = false;
+                }
+                
+                // Validate Message
+                const messageInput = form.querySelector('textarea[name="message"]');
+                if (messageInput.value.trim().length < 20) {
+                    const error = messageInput.parentElement.querySelector('.error-message');
+                    error.classList.remove('hidden');
+                    isValid = false;
+                }
+                
+                // Validate Privacy Checkbox
+                const privacyCheckbox = form.querySelector('input[type="checkbox"]');
+                if (!privacyCheckbox.checked) {
+                    alert('Please agree to the Privacy Policy to continue.');
+                    isValid = false;
+                }
+                
+                if (isValid) {
+                    // Show success message
+                    form.style.display = 'none';
+                    successMessage.classList.remove('hidden');
+                    
+                    // Reset form after 3 seconds
+                    setTimeout(() => {
+                        form.reset();
+                        form.style.display = 'block';
+                        successMessage.classList.add('hidden');
+                        updateCharCount();
+                    }, 5000);
+                }
+            });
+        }
+        
+        // Character Counter for Message
+        const messageTextarea = document.querySelector('textarea[name="message"]');
+        const charCount = document.querySelector('.char-count');
+        
+        function updateCharCount() {
+            if (messageTextarea && charCount) {
+                const length = messageTextarea.value.length;
+                charCount.textContent = `${length}/500`;
+                
+                if (length > 500) {
+                    charCount.classList.add('text-red-500');
+                    messageTextarea.value = messageTextarea.value.substring(0, 500);
+                    charCount.textContent = '500/500';
+                } else if (length < 20) {
+                    charCount.classList.add('text-red-500');
+                    charCount.classList.remove('text-green-500');
+                } else {
+                    charCount.classList.remove('text-red-500');
+                    charCount.classList.add('text-green-500');
+                }
+            }
+        }
+        
+        if (messageTextarea) {
+            messageTextarea.addEventListener('input', updateCharCount);
+            updateCharCount();
+        }
+        
+        // File Upload
+        const fileInput = document.getElementById('fileInput');
+        const fileList = document.getElementById('fileList');
+        let uploadedFiles = [];
+        
+        if (fileInput && fileList) {
+            fileInput.addEventListener('change', function(e) {
+                const files = Array.from(e.target.files);
+                
+                files.forEach(file => {
+                    if (file.size > 10 * 1024 * 1024) {
+                        alert(`${file.name} is larger than 10MB and will not be uploaded.`);
+                        return;
+                    }
+                    
+                    uploadedFiles.push(file);
+                    
+                    const fileItem = document.createElement('div');
+                    fileItem.className = 'flex items-center justify-between p-2 bg-gray-50 rounded-lg';
+                    fileItem.innerHTML = `
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-file text-gray-400"></i>
+                            <span class="text-sm text-gray-600">${file.name}</span>
+                            <span class="text-xs text-gray-400">(${(file.size / 1024).toFixed(1)} KB)</span>
+                        </div>
+                        <button type="button" class="text-red-500 hover:text-red-700" onclick="removeFile(this, '${file.name}')">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    `;
+                    fileList.appendChild(fileItem);
+                });
+                
+                fileInput.value = '';
+            });
+        }
+        
+        // Remove File Function
+        window.removeFile = function(button, fileName) {
+            uploadedFiles = uploadedFiles.filter(file => file.name !== fileName);
+            button.parentElement.remove();
+        };
+        
+        // Clear Form Button
+        const clearButton = form.querySelector('button[type="button"]');
+        if (clearButton) {
+            clearButton.addEventListener('click', function() {
+                form.reset();
+                fileList.innerHTML = '';
+                uploadedFiles = [];
+                updateCharCount();
+                
+                // Reset contact options
+                contactOptions.forEach(opt => {
+                    opt.classList.remove('active', 'border-primary', 'bg-primary/5', 'text-primary');
+                    opt.classList.add('border-gray-200', 'bg-gray-50', 'text-gray-600');
+                });
+                
+                // Set first option as active
+                if (contactOptions[0]) {
+                    contactOptions[0].click();
+                }
+            });
+        }
+        
+        // FAQ Tabs
+        const faqTabs = document.querySelectorAll('.faq-tab');
+        const faqContents = document.querySelectorAll('.faq-content');
+        
+        faqTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const category = this.dataset.category;
+                
+                // Update tabs
+                faqTabs.forEach(t => {
+                    t.classList.remove('active', 'bg-primary', 'text-white');
+                    t.classList.add('bg-gray-200', 'text-gray-600');
+                });
+                
+                this.classList.remove('bg-gray-200', 'text-gray-600');
+                this.classList.add('active', 'bg-primary', 'text-white');
+                
+                // Update content
+                faqContents.forEach(content => {
+                    if (content.dataset.category === category) {
+                        content.classList.remove('hidden');
+                    } else {
+                        content.classList.add('hidden');
+                    }
+                });
+            });
+        });
+        
+        // Map Modal (placeholder)
+        window.showMapModal = function() {
+            alert('Map functionality would be implemented here with Google Maps or similar service.');
+        };
+        
+        // Live Chat (placeholder)
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Start Chat') || button.textContent.includes('Start Live Chat')) {
+                button.addEventListener('click', function() {
+                    alert('Live chat functionality would be implemented here with a service like Intercom, Zendesk Chat, or custom solution.');
+                });
+            }
+        });
+    });
+    
+    // Add floating animation CSS
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+    `;
+    document.head.appendChild(style);
+    </script>
+</body>
+</html>

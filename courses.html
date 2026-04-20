@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Catalog - Gaia Academy</title>
+    <link rel="icon" type="image/png" href="image/favicon.png">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#14532D',
+                        secondary: '#A16207',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        /* Specific 1024px tab view styling */
+        @media (min-width: 1024px) and (max-width: 1024px) {
+            .master-pathways-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            .master-pathways-grid > :last-child {
+                grid-column: 1 / -1;
+                max-width: 350px;
+                margin: 2rem auto 0;
+            }
+            .master-pathways-grid > :last-child .card-premium {
+                transform: scale(0.95);
+            }
+        }
+
+        /* Center all testimonial cards with perfect equality in tablet and 1024px */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .trusted-reviews-grid {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                gap: 2rem !important;
+            }
+            .trusted-reviews-grid > div {
+                flex: 0 0 calc(50% - 1rem) !important;
+                max-width: calc(50% - 1rem) !important;
+            }
+        }
+        .animation-delay-100ms {
+            animation-delay: 0.1s;
+        }
+        .animation-delay-200ms {
+            animation-delay: 0.2s;
+        }
+        .animation-delay-2s {
+            animation-delay: 2s;
+        }
+        .animation-delay-4s {
+            animation-delay: 4s;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 transition-colors duration-300">
+
+    <!-- Navbar -->
+    <header
+        class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="image/favicon.png" alt="Logo" class="logo-brand-img group-hover:rotate-12 transition-all">
+                <span class="logo-brand-text text-primary">Gaia Academy</span>
+            </a>
+
+            <ul class="hidden xl:flex items-center gap-8 text-gray-700 font-medium">
+                <li><a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                </li>
+                <li><a href="home2.html" class="hover:text-primary transition-colors">Home2</a>
+                </li>
+                <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
+                <li><a href="courses.html" class="hover:text-primary transition-colors">Courses</a></li>
+                <li><a href="testimonial.html" class="hover:text-primary transition-colors">Testimonial</a></li>
+                <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                <li><a href="instructor.html" class="hover:text-primary transition-colors">Dashboard</a></li>
+
+            </ul>
+
+            <!-- CTAs & Toggles -->
+            <div class="flex items-center gap-4">
+                <div class="hidden xl:flex items-center gap-3">
+                    <a href="login.html" class="btn-primary-gaia">Login</a>
+                </div>
+
+                <div class="hidden xl:flex items-center gap-3">
+                    <button class="theme-toggle w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 hover:bg-gray-100 transition-all border border-gray-100">
+                        <i class="fas fa-moon theme-toggle-icon text-primary text-lg"></i>
+                    </button>
+                    <button class="rtl-toggle w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 hover:bg-gray-100 transition-all border border-gray-100">
+                        <i class="fas fa-right-left rtl-toggle-icon text-primary text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <button class="xl:hidden hamburger-btn p-2 text-primary z-[70] relative">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Premium Full-Screen Mobile Menu -->
+        <div id="mobile-menu" class="hidden xl:hidden">
+            <ul class="flex flex-col gap-8 text-center items-center">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="home2.html">Home 2</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="testimonial.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                
+                <li class="pt-8 border-t border-gray-100 w-full flex flex-col gap-3">
+                    <button
+                        class="theme-toggle flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-gray-50 text-gray-900 font-black uppercase tracking-widest text-xs translate-y-0">
+                        <i class="fas fa-moon theme-toggle-icon text-primary text-lg"></i> Appearance
+                    </button>
+                    <button
+                        class="rtl-toggle flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-gray-50 text-gray-900 font-black uppercase tracking-widest text-xs translate-y-0">
+                        <i class="fas fa-right-left rtl-toggle-icon text-primary text-lg"></i> Reading Direction
+                    </button>
+                </li>
+
+                <li class="flex flex-col gap-4 w-full">
+                    <a href="login.html" class="btn-primary-gaia w-full !py-4">Login</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-safe-top pb-32 bg-gradient-to-br from-primary via-green-800 to-green-950 dark:from-black dark:via-green-950 dark:to-black transition-colors duration-300 relative overflow-hidden">
+        <!-- Animated Background Pattern -->
+        <div class="absolute inset-0 opacity-20" style="background-image: url('data:image/svg+xml,<svg width=\"100\" height=\"100\" viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 50 Q25 25 50 50 T100 50 M0 80 Q25 55 50 80 T100 80 M0 20 Q25 -5 50 20 T100 20\" fill=\"none\" stroke=\"white\" stroke-width=\"0.5\"/></svg>'); background-size: 100px; animation: float 20s ease-in-out infinite;"></div>
+        
+        <!-- Floating Orbs -->
+        <div class="absolute top-20 left-20 w-64 h-64 bg-secondary/30 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-20 right-20 w-96 h-96 bg-primary/40 rounded-full blur-3xl animate-pulse animation-delay-2s"></div>
+        <div class="absolute top-1/2 left-1/3 w-80 h-80 bg-white/10 rounded-full blur-2xl animate-pulse animation-delay-4s"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="container mx-auto px-4 text-center max-w-5xl reveal-on-scroll">
+                <div class="inline-block px-6 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-[10px] font-black uppercase tracking-[0.3em] mb-12 animate-pulse">Master Your Skills</div>
+                <h1 class="text-6xl lg:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.9] bg-gradient-to-r from-white via-green-100 to-white bg-clip-text text-transparent">Course <span class="italic font-light font-serif text-secondary">Catalog</span></h1>
+                <p class="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-16">Discover our full range of masterclasses led by world-class permaculture designers and transform your understanding of sustainable living.</p>
+                
+                <!-- Hero Stats -->
+                <div class="grid grid-cols-3 gap-8 max-w-2xl mx-auto mb-16">
+                    <div class="text-center">
+                        <div class="text-3xl font-black text-secondary mb-2">50+</div>
+                        <div class="text-white/60 text-xs font-black uppercase tracking-widest">Expert Courses</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-black text-secondary mb-2">4.9+</div>
+                        <div class="text-white/60 text-xs font-black uppercase tracking-widest">Avg Rating</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-black text-secondary mb-2">12M+</div>
+                        <div class="text-white/60 text-xs font-black uppercase tracking-widest">Students</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced Search & Filter Bar -->
+            <div class="max-w-5xl mx-auto reveal-on-scroll animation-delay-100ms">
+                <div class="bg-white/95 dark:bg-gray-800/95 backdrop-blur-2xl p-8 rounded-3xl border border-white/30 shadow-2xl">
+                    <div class="flex flex-col lg:flex-row gap-6">
+                        <div class="flex-1 relative">
+                            <i class="fas fa-search absolute left-6 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-300 text-lg"></i>
+                            <input type="text" placeholder="Search courses (e.g. Food Forest, Swales)..." class="w-full pl-16 pr-6 py-4 rounded-2xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 outline-none focus:ring-2 focus:ring-secondary text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 text-lg">
+                        </div>
+                        <div class="flex flex-wrap gap-4">
+                            <select class="px-8 py-4 rounded-2xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 outline-none focus:ring-2 focus:ring-secondary font-medium text-gray-900 dark:text-white text-lg min-w-[150px]">
+                                <option>All Categories</option>
+                                <option>Design</option>
+                                <option>Soil</option>
+                                <option>Water</option>
+                                <option>Community</option>
+                            </select>
+                            <select class="px-8 py-4 rounded-2xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 outline-none focus:ring-2 focus:ring-secondary font-medium text-gray-900 dark:text-white text-lg min-w-[150px]">
+                                <option>Difficulty</option>
+                                <option>Beginner</option>
+                                <option>Intermediate</option>
+                                <option>Advanced</option>
+                            </select>
+                            <button class="bg-secondary text-primary px-12 py-4 rounded-2xl font-black hover:bg-white hover:text-primary transition-all text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1">Filter Courses</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Gradient Fade -->
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-green-950 to-transparent"></div>
+    </section>
+
+    <!-- Course Categories -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4 reveal-on-scroll">
+                <button class="px-6 py-2 rounded-full border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all bg-primary text-white">All Courses</button>
+                <button class="px-6 py-2 rounded-full border border-gray-200 text-gray-600 font-bold hover:border-primary hover:text-primary transition-all">Design Principles</button>
+                <button class="px-6 py-2 rounded-full border border-gray-200 text-gray-600 font-bold hover:border-primary hover:text-primary transition-all">Regenerative Soil</button>
+                <button class="px-6 py-2 rounded-full border border-gray-200 text-gray-600 font-bold hover:border-primary hover:text-primary transition-all">Water Harvesting</button>
+                <button class="px-6 py-2 rounded-full border border-gray-200 text-gray-600 font-bold hover:border-primary hover:text-primary transition-all">Urban Farming</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Course Grid (Redesigned for Alignment) -->
+    <section class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                
+                <!-- Card 1: Food Forest -->
+                <div class="group flex flex-col bg-white rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] border border-gray-100 transition-all duration-500 hover:-translate-y-4 reveal-on-scroll">
+                    <div class="relative h-72 overflow-hidden shrink-0">
+                        <img src="image/food_forest_aerial_mastery.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Food Forest">
+                        <div class="absolute top-6 left-6 flex gap-2">
+                             <span class="bg-primary text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">Expert</span>
+                        </div>
+                    </div>
+                    <div class="p-10 flex-1 flex flex-col">
+                        <div class="mb-4 flex items-center justify-between">
+                            <h3 class="text-2xl font-black text-gray-900 leading-tight">Food Forest Design Mastery</h3>
+                            <div class="text-[10px] font-bold text-gray-900 dark:text-gray-800 shadow-sm border border-gray-50 dark:border-gray-600 px-2 py-1 rounded-lg shrink-0"><i class="fas fa-star text-yellow-500 mr-1"></i> 4.9 (120+)</div>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-8 leading-relaxed">Learn to design multi-layered edible ecosystems that thrive for decades.</p>
+                        <div class="mt-auto">
+                            <div class="flex items-center justify-between pt-8 border-t border-gray-50 mb-8">
+                                <div class="flex items-center gap-3">
+                                    <img src="image/instructor_oliver_hd.png" class="w-10 h-10 rounded-full border-2 border-primary/20 p-0.5 object-cover">
+                                    <span class="text-[10px] font-black text-gray-400 dark:text-gray-300 uppercase tracking-widest">Oliver Green</span>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-[9px] font-black text-gray-400 dark:text-gray-300 dark:text-white/30 uppercase mb-1">Full Price</p>
+                                    <span class="text-2xl font-black text-primary">$199</span>
+                                </div>
+                            </div>
+                            <a href="single.html" class="btn-primary-gaia w-full block text-center py-4 text-xs font-black uppercase tracking-widest">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Soil -->
+                <div class="group flex flex-col bg-white rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] border border-gray-100 transition-all duration-500 hover:-translate-y-4 reveal-on-scroll animation-delay-100ms">
+                    <div class="relative h-72 overflow-hidden shrink-0">
+                        <img src="image/course_soil_regeneration_hd.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Soil">
+                        <div class="absolute top-6 left-6 flex gap-2">
+                             <span class="bg-secondary text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">Beginner</span>
+                        </div>
+                    </div>
+                    <div class="p-10 flex-1 flex flex-col">
+                        <div class="mb-4 flex items-center justify-between">
+                            <h3 class="text-2xl font-black text-gray-900 leading-tight">Soil Regeneration 101</h3>
+                            <div class="text-[10px] font-bold text-gray-900 shadow-sm border border-gray-50 px-2 py-1 rounded-lg shrink-0"><i class="fas fa-star text-yellow-500 mr-1"></i> 4.8 (85)</div>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-8 leading-relaxed">Discover the magic of soil health, composting, and vermiculture.</p>
+                        <div class="mt-auto">
+                            <div class="flex items-center justify-between pt-8 border-t border-gray-50 mb-8">
+                                <div class="flex items-center gap-3">
+                                    <img src="image/about page image4.png" class="w-10 h-10 rounded-full border-2 border-primary/20 p-0.5 object-cover">
+                                    <span class="text-[10px] font-black text-gray-400 dark:text-gray-300 uppercase tracking-widest">Sarah Bloom</span>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-[9px] font-black text-gray-400 dark:text-gray-300 dark:text-white/30 uppercase mb-1">Full Price</p>
+                                    <span class="text-2xl font-black text-primary">$99</span>
+                                </div>
+                            </div>
+                            <a href="single.html" class="btn-primary-gaia w-full block text-center py-4 text-xs font-black uppercase tracking-widest">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Hydrology -->
+                <div class="group flex flex-col bg-white rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] border border-gray-100 transition-all duration-500 hover:-translate-y-4 reveal-on-scroll animation-delay-200ms">
+                    <div class="relative h-72 overflow-hidden shrink-0">
+                        <img src="image/Water Management and Swales in permaculture landscape.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Hydrology">
+                        <div class="absolute top-6 left-6 flex gap-2">
+                             <span class="bg-primary text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">Intermediate</span>
+                        </div>
+                    </div>
+                    <div class="p-10 flex-1 flex flex-col">
+                        <div class="mb-4 flex items-center justify-between">
+                            <h3 class="text-2xl font-black text-gray-900 leading-tight">Regenerative Hydrology</h3>
+                            <div class="text-[10px] font-bold text-gray-900 shadow-sm border border-gray-50 px-2 py-1 rounded-lg shrink-0"><i class="fas fa-star text-yellow-500 mr-1"></i> 4.7 (210)</div>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-8 leading-relaxed">Master the art of water harvesting and drought resilience.</p>
+                        <div class="mt-auto">
+                            <div class="flex items-center justify-between pt-8 border-t border-gray-50 mb-8">
+                                <div class="flex items-center gap-3">
+                                    <img src="image/instructor_elena_hd.png" class="w-10 h-10 rounded-full border-2 border-primary/20 p-0.5 object-cover">
+                                    <span class="text-[10px] font-black text-gray-400 dark:text-gray-300 uppercase tracking-widest">Elena Rivers</span>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-[9px] font-black text-gray-400 dark:text-gray-300 dark:text-white/30 uppercase mb-1">Full Price</p>
+                                    <span class="text-2xl font-black text-primary">$149</span>
+                                </div>
+                            </div>
+                            <a href="single.html" class="btn-primary-gaia w-full block text-center py-4 text-xs font-black uppercase tracking-widest">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Companion Planting -->
+                <div class="group flex flex-col bg-white rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] border border-gray-100 transition-all duration-500 hover:-translate-y-4 reveal-on-scroll">
+                    <div class="relative h-72 overflow-hidden shrink-0">
+                        <img src="image/Polyculture and Companion Planting vibrant garden bed.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Companion Planting">
+                        <div class="absolute top-6 left-6 flex gap-2">
+                             <span class="bg-secondary text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">Beginner</span>
+                        </div>
+                    </div>
+                    <div class="p-10 flex-1 flex flex-col">
+                        <div class="mb-4 flex items-center justify-between">
+                            <h3 class="text-2xl font-black text-gray-900 leading-tight">Companion Planting Mastery</h3>
+                            <div class="text-[10px] font-bold text-gray-900 shadow-sm border border-gray-50 px-2 py-1 rounded-lg shrink-0"><i class="fas fa-star text-yellow-500 mr-1"></i> 4.5 (45)</div>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-8 leading-relaxed">Create harmonious plant guilds for natural pest control.</p>
+                        <div class="mt-auto">
+                            <div class="flex items-center justify-between pt-8 border-t border-gray-50 mb-8">
+                                <div class="flex items-center gap-3">
+                                    <img src="image/about page image4.png" class="w-10 h-10 rounded-full border-2 border-primary/20 p-0.5 object-cover">
+                                    <span class="text-[10px] font-black text-gray-400 dark:text-gray-300 uppercase tracking-widest">Sarah Bloom</span>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-[9px] font-black text-gray-400 dark:text-gray-300 dark:text-white/30 uppercase mb-1">Full Price</p>
+                                    <span class="text-2xl font-black text-primary">$79</span>
+                                </div>
+                            </div>
+                            <a href="single.html" class="btn-primary-gaia w-full block text-center py-4 text-xs font-black uppercase tracking-widest">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Commercial -->
+                <div class="group flex flex-col bg-white rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] border border-gray-100 transition-all duration-500 hover:-translate-y-4 reveal-on-scroll animation-delay-100ms">
+                    <div class="relative h-72 overflow-hidden shrink-0">
+                        <img src="image/course_food_forest_architect_hd.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Commercial">
+                        <div class="absolute top-6 left-6 flex gap-2">
+                             <span class="bg-primary text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">Advanced</span>
+                        </div>
+                    </div>
+                    <div class="p-10 flex-1 flex flex-col">
+                        <div class="mb-4 flex items-center justify-between">
+                            <h3 class="text-2xl font-black text-gray-900 leading-tight">Commercial Permaculture</h3>
+                            <div class="text-[10px] font-bold text-gray-900 shadow-sm border border-gray-50 px-2 py-1 rounded-lg shrink-0"><i class="fas fa-star text-yellow-500 mr-1"></i> 5.0 (12)</div>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-8 leading-relaxed">Build a profitable regenerative business on a large scale.</p>
+                        <div class="mt-auto">
+                            <div class="flex items-center justify-between pt-8 border-t border-gray-50 mb-8">
+                                <div class="flex items-center gap-3">
+                                    <img src="image/instructor_oliver_hd.png" class="w-10 h-10 rounded-full border-2 border-primary/20 object-cover p-0.5">
+                                    <span class="text-[10px] font-black text-gray-400 dark:text-gray-300 uppercase tracking-widest">Oliver Green</span>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-[9px] font-black text-gray-400 dark:text-gray-300 dark:text-white/30 uppercase mb-1">Full Price</p>
+                                    <span class="text-2xl font-black text-primary">$499</span>
+                                </div>
+                            </div>
+                            <a href="single.html" class="btn-primary-gaia w-full block text-center py-4 text-xs font-black uppercase tracking-widest">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Arid Zone restoration (New Card) -->
+                <div class="group flex flex-col bg-white rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] border border-gray-100 transition-all duration-500 hover:-translate-y-4 reveal-on-scroll" style="animation-delay: 0.2s">
+                    <div class="relative h-72 overflow-hidden shrink-0">
+                        <img src="image/project_arid_greening_hd.png" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" alt="Arid Zone">
+                        <div class="absolute top-6 left-6 flex gap-2">
+                             <span class="bg-primary text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">Advanced</span>
+                        </div>
+                    </div>
+                    <div class="p-10 flex-1 flex flex-col">
+                        <div class="mb-4 flex items-center justify-between">
+                            <h3 class="text-2xl font-black text-gray-900 leading-tight">Arid Zone Restoration</h3>
+                            <div class="text-[10px] font-bold text-gray-900 shadow-sm border border-gray-50 px-2 py-1 rounded-lg shrink-0"><i class="fas fa-star text-yellow-500 mr-1"></i> 4.9 (50+)</div>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-8 leading-relaxed">Greening deserts and building climate resilience in extreme heat environments.</p>
+                        <div class="mt-auto">
+                            <div class="flex items-center justify-between pt-8 border-t border-gray-50 mb-8">
+                                <div class="flex items-center gap-3">
+                                    <img src="image/instructor_marcus_thorne.png" class="w-10 h-10 rounded-full border-2 border-primary/20 object-cover p-0.5">
+                                    <span class="text-[10px] font-black text-gray-400 dark:text-gray-300 uppercase tracking-widest">Marcus Thorne</span>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-[9px] font-black text-gray-400 dark:text-gray-300 dark:text-white/30 uppercase mb-1">Full Price</p>
+                                    <span class="text-2xl font-black text-primary">$349</span>
+                                </div>
+                            </div>
+                            <a href="single.html" class="btn-primary-gaia w-full block text-center py-4 text-xs font-black uppercase tracking-widest">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Courses (Secondary Grid) -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+             <div class="text-left mb-12 reveal-on-scroll">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-2">Popular Right Now</h2>
+                <div class="w-20 h-1.5 bg-secondary rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <div class="flex items-center gap-6 p-6 bg-gray-50 rounded-3xl reveal-on-scroll">
+                     <img src="image/Soil Regeneration and Composting techniques close-up.png" class="w-24 h-24 rounded-2xl object-cover shadow-lg">
+                     <div>
+                         <h4 class="font-bold text-gray-900">Vermiculture Pro</h4>
+                         <p class="text-xs text-gray-500 mb-2">Design your ideal worm farm.</p>
+                         <span class="text-primary font-black text-lg">$45</span>
+                     </div>
+                 </div>
+                  <div class="flex items-center gap-6 p-6 bg-gray-50 rounded-3xl reveal-on-scroll" style="animation-delay: 0.1s">
+                     <img src="image/Rainwater collection system and swales after rainfall.png" class="w-24 h-24 rounded-2xl object-cover shadow-lg">
+                     <div>
+                         <h4 class="font-bold text-gray-900">Greywater Re-use</h4>
+                         <p class="text-xs text-gray-500 mb-2">Sustainable indoor plumbing.</p>
+                         <span class="text-primary font-black text-lg">$89</span>
+                     </div>
+                 </div>
+                  <div class="flex items-center gap-6 p-6 bg-gray-50 rounded-3xl reveal-on-scroll" style="animation-delay: 0.2s">
+                     <img src="image/Beautiful raised garden beds with abundant vegetables.png" class="w-24 h-24 rounded-2xl object-cover shadow-lg">
+                     <div>
+                         <h4 class="font-bold text-gray-900">Kitchen Gardening</h4>
+                         <p class="text-xs text-gray-500 mb-2">Year-round vegetable production.</p>
+                         <span class="text-primary font-black text-lg">$55</span>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Reviews Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal-on-scroll">
+                 <h2 class="text-4xl font-extrabold text-gray-900">Trusted by Thousands</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 trusted-reviews-grid">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 reveal-on-scroll">
+                    <div class="flex text-yellow-500 mb-4 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed italic">"The curriculum is incredible. It blends theoretical design with practical hands-on examples that anyone can follow."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://ui-avatars.com/api/?name=Mark+D" class="w-10 h-10 rounded-full">
+                        <div>
+                            <h5 class="font-bold text-sm">Mark Donaldson</h5>
+                            <p class="text-[10px] text-gray-500 uppercase">Urban Farmer</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 reveal-on-scroll" style="animation-delay: 0.1s">
+                    <div class="flex text-yellow-500 mb-4 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed italic">"I finally understand how to manage water on my sloping terrain. Elena's hydrology course is a must-have!"</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://ui-avatars.com/api/?name=Linda+K&background=A16207&color=fff" class="w-10 h-10 rounded-full">
+                        <div>
+                            <h5 class="font-bold text-sm">Linda Karlson</h5>
+                            <p class="text-[10px] text-gray-500 uppercase">Landscape Architect</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 reveal-on-scroll" style="animation-delay: 0.2s">
+                    <div class="flex text-yellow-500 mb-4 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed italic">"The depth of the soil science here is unmatched. My community gardens have doubled their yields in just one season thanks to Gaia."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://ui-avatars.com/api/?name=Sarah+Jenkins&background=14532D&color=fff" class="w-10 h-10 rounded-full">
+                        <div>
+                            <h5 class="font-bold text-sm">Sarah Jenkins</h5>
+                            <p class="text-[10px] text-gray-500 uppercase">Community Lead</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global CTA: Suggest a Topic (Redesigned) -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="bg-gradient-to-br from-primary to-green-950 p-12 lg:p-24 rounded-[4rem] text-white relative z-10 reveal-on-scroll overflow-hidden">
+                <!-- Topographic Pattern Overlay -->
+                <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: url('data:image/svg+xml,<svg width=\"200\" height=\"200\" viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 100 Q50 50 100 100 T200 100 M0 140 Q50 90 100 140 T200 140 M0 60 Q50 10 100 60 T200 60\" fill=\"none\" stroke=\"white\" stroke-width=\"1\"/></svg>'); background-size: 300px;"></div>
+                
+                <div class="grid lg:grid-cols-2 gap-16 items-center relative z-20">
+                    <div class="text-left">
+                        <div class="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-full text-white text-[10px] font-black uppercase tracking-[0.3em] mb-8">Collaborative Design</div>
+                        <h2 class="text-5xl lg:text-7xl font-black mb-8 tracking-tighter leading-[0.9]">CAN'T FIND <br><span class="text-white">THE PATH?</span></h2>
+                        <p class="text-lg text-white mb-12 max-w-lg leading-relaxed">Our curriculum is built by the community. Suggest a specific course topic and get an exclusive 50% discount if your vision becomes a reality.</p>
+                        <div class="flex flex-col sm:flex-row gap-6">
+                            <a href="contact.html" class="btn-primary-gaia !px-12 !py-4 shadow-2xl">Submit Suggestion</a>
+                            <a href="login.html" class="btn-secondary-gaia !px-12 !py-4 !text-white !border-white hover:!bg-white hover:!text-primary transition-all">Login to Access</a>
+                        </div>
+                    </div>
+                    
+                    <div class="relative hidden lg:block">
+                        <!-- Visualized Suggestion Card Mockup -->
+                        <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-10 rounded-[3rem] shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700">
+                             <div class="flex items-center gap-4 mb-8">
+                                 <div class="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center text-xl"><i class="fas fa-edit"></i></div>
+                                 <div>
+                                     <p class="text-[10px] uppercase font-black tracking-widest opacity-50">Suggestion #1024</p>
+                                     <h4 class="font-black text-xl">Arid Zone Swale Systems</h4>
+                                 </div>
+                             </div>
+                             <div class="h-40 rounded-2xl mb-8 overflow-hidden grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700 shadow-inner border border-white/10">
+                                 <img src="image/arid_zone_swale_blueprint.png" class="w-full h-full object-cover" alt="Arid Zone Swale Blueprint">
+                             </div>
+                             <div class="flex items-center justify-between">
+                                 <div class="flex -space-x-3">
+                                     <div class="w-8 h-8 rounded-full border-2 border-primary bg-gray-500"></div>
+                                     <div class="w-8 h-8 rounded-full border-2 border-primary bg-gray-600"></div>
+                                     <div class="w-8 h-8 rounded-full border-2 border-primary bg-gray-700"></div>
+                                 </div>
+                                 <span class="text-[10px] font-black uppercase tracking-widest px-3 py-1 bg-secondary rounded-full">Coming Soon</span>
+                             </div>
+                        </div>
+                        <!-- Glowing Badge -->
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-secondary rounded-full flex flex-col items-center justify-center text-white shadow-2xl border-4 border-white/20 animate-pulse">
+                            <span class="text-[10px] font-black uppercase tracking-tighter">Reward</span>
+                            <span class="text-3xl font-black">50%</span>
+                            <span class="text-[10px] font-black uppercase">Off</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Background Orbs -->
+            <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-primary rounded-full blur-[120px] opacity-20"></div>
+            <div class="absolute top-20 right-0 w-80 h-80 bg-secondary rounded-full blur-[100px] opacity-10"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-100 pt-20 pb-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="mobile-center">
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <img src="image/favicon.png" alt="Logo" class="logo-brand-img">
+                        <span class="logo-brand-text text-primary">Gaia Academy</span>
+                    </a>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Global educational platform for permaculture design
+                        and sustainable living principles.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6">Account</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="login.html" class="hover:text-primary transition-colors">Login</a></li>
+                        <li><a href="signup.html" class="hover:text-primary transition-colors">Register</a></li>
+                        <li><a href="instructor.html" class="hover:text-primary transition-colors">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6">Quick Links</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="courses.html" class="hover:text-primary transition-colors">Course Catalog</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors">Our History</a></li>
+                        <li><a href="testimonial.html" class="hover:text-primary transition-colors">Success Stories</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6">Popular Topics</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="#" class="hover:text-primary transition-colors">Urban Gardening</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Water Harvesting</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Animal Integration</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Composting Pro</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="pt-8 border-t border-gray-100 text-center text-gray-400 dark:text-gray-300 text-xs">
+                © 2026 Gaia Academy. All rights reserved. Designed with ❤️ for the Earth.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

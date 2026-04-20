@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaia Academy - Premium Permaculture Experience</title>
+    <link rel="icon" type="image/png" href="image/favicon.png">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#14532D',
+                        secondary: '#A16207',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/index.css">
+
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #14532D 0%, #064e3b 100%);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #a7f3d0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card-premium {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-premium:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 25px 50px -12px rgba(20, 83, 45, 0.25);
+        }
+
+        /* Center all 3 cards with perfect equality in tablet and 1024px */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .master-pathways-grid {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                gap: 2.5rem !important;
+            }
+
+            .master-pathways-grid > div {
+                flex: 0 0 calc(50% - 1.25rem) !important;
+                max-width: calc(50% - 1.25rem) !important;
+            }
+
+            .master-pathways-grid > :last-child {
+                transform: none !important;
+            }
+        }
+
+        /* Specific 1024px tab view styling refinement */
+        @media (min-width: 1024px) and (max-width: 1024px) {
+            .master-pathways-grid {
+                gap: 2rem !important;
+            }
+            .master-pathways-grid > div {
+                flex: 0 0 calc(50% - 1rem) !important;
+                max-width: calc(50% - 1rem) !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-[#fafaf9] transition-colors duration-300">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="image/favicon.png" alt="Logo" class="logo-brand-img group-hover:rotate-12 transition-all">
+                <span class="logo-brand-text text-primary">Gaia Academy</span>
+            </a>
+
+            <ul class="hidden xl:flex items-center gap-8 text-gray-700 font-medium">
+                <li><a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                </li>
+                <li><a href="home2.html" class="hover:text-primary transition-colors">Home2</a>
+                </li>
+                <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
+                <li><a href="courses.html" class="hover:text-primary transition-colors">Courses</a></li>
+                <li><a href="testimonial.html" class="hover:text-primary transition-colors">Testimonial</a></li>
+                <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                <li><a href="instructor.html" class="hover:text-primary transition-colors">Dashboard</a></li>
+
+            </ul>
+
+            <!-- CTAs & Toggles -->
+            <div class="flex items-center gap-4">
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="login.html" class="btn-primary-gaia">Login</a>
+                </div>
+
+                <div class="hidden md:flex items-center gap-2">
+                    <div class="hidden xl:flex items-center gap-3">
+                        <button class="theme-toggle w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 hover:bg-gray-100 transition-all border border-gray-100">
+                            <i class="fas fa-moon theme-toggle-icon text-primary"></i>
+                        </button>
+                        <button class="rtl-toggle w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 hover:bg-gray-100 transition-all border border-gray-100">
+                            <i class="fas fa-right-left rtl-toggle-icon text-primary"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <button class="xl:hidden hamburger-btn p-2 text-primary z-[70] relative">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Premium Full-Screen Mobile Menu -->
+        <div id="mobile-menu" class="hidden xl:hidden">
+            <ul class="flex flex-col gap-8 text-center items-center">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="home2.html">Home 2</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="testimonial.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+                <li class="pt-8 border-t border-gray-100 w-full flex flex-col gap-3">
+                    <button
+                        class="theme-toggle flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-gray-50 text-gray-900 font-black uppercase tracking-widest text-xs translate-y-0">
+                        <i class="fas fa-moon theme-toggle-icon text-primary text-lg"></i> Appearance
+                    </button>
+                    <button
+                        class="rtl-toggle flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-gray-50 text-gray-900 font-black uppercase tracking-widest text-xs translate-y-0">
+                        <i class="fas fa-right-left rtl-toggle-icon text-primary text-lg"></i> Reading Direction
+                    </button>
+                </li>
+
+                <li class="flex flex-col gap-4 w-full">
+                    <a href="login.html" class="btn-primary-gaia w-full !py-4">Login</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    </header>
+
+    <!-- Premium Hero -->
+    <section
+        class="min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-20 relative overflow-hidden bg-white">
+        <div class="container mx-auto px-6 text-center mb-16">
+            <div class="reveal-on-scroll flex flex-col items-center">
+                <div
+                    class="flex items-center justify-center gap-2 mb-8 bg-primary/5 px-4 py-2 rounded-full w-fit border border-primary/10">
+                    <span
+                        class="w-2 h-2 bg-primary rounded-full animate-pulse shadow-[0_0_8px_rgba(20,83,45,0.5)]"></span>
+                    <span class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Sustainability
+                        Redefined</span>
+                </div>
+                <h1 class="text-6xl lg:text-[120px] font-black text-gray-900 leading-[0.85] tracking-tighter mb-10">
+                    LEAVE THE <br><span class="text-secondary italic font-light drop-shadow-sm">WHEEL</span> BEHIND.
+                </h1>
+                <p class="text-xl text-gray-500 mb-12 max-w-2xl leading-relaxed mx-auto">Gaia Academy offers an
+                    immersive 4K video learning experience into the depths of permaculture design and ecosystem
+                    regeneration.</p>
+                <div class="flex flex-col sm:flex-row gap-8 items-center justify-center">
+                    <a href="courses.html" class="btn-primary-gaia shadow-2xl scale-110 hover:scale-115">Start
+                        Masterclass</a>
+                    <button class="flex items-center gap-5 group py-2">
+                        <span
+                            class="w-14 h-14 rounded-full border border-gray-200 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm"><i
+                                class="fas fa-play text-sm"></i></span>
+                        <span
+                            class="font-bold uppercase text-[10px] tracking-[0.3em] text-gray-900 border-b border-gray-200 pb-1 group-hover:border-primary transition-colors">Watch
+                            Brand Film</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full px-4 lg:px-10 reveal-on-scroll" style="animation-delay: 0.3s">
+            <div
+                class="aspect-[21/9] sm:aspect-[16/9] md:aspect-[21/9] rounded-[1.5rem] sm:rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden shadow-[0_20px_40px_-15px_rgba(0,0,0,0.2)] lg:shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] relative group">
+                <img src="image/permaculture_hero_wide.png"
+                    class="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-105"
+                    alt="Cinematic Panorama">
+
+                <!-- Refined Floating Status Card - Mobile Optimized -->
+                 
+
+                <!-- Technical Overlay Details - Hidden on small mobile -->
+                <div
+                    class="absolute top-4 right-4 sm:top-6 sm:right-6 lg:top-10 lg:right-10 flex flex-col gap-2 sm:gap-4 items-end opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    <div
+                        class="bg-black/40 backdrop-blur-md border border-white/10 px-2 py-1 sm:px-3 sm:py-2 rounded-lg text-white font-mono text-[8px] sm:text-[10px]">
+                        LAT: 34.0522° N | LON: 118.2437° W
+                    </div>
+                    <div
+                        class="bg-black/40 backdrop-blur-md border border-white/10 px-2 py-1 sm:px-3 sm:py-2 rounded-lg text-white font-mono text-[8px] sm:text-[10px]">
+                        ALT: 450m | TEMP: 24°C
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Preview Section (Cinematic Redesign) -->
+    <section class="py-40 bg-[#0a0a0a] text-white overflow-hidden relative">
+        <!-- Background Lighting Flare -->
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-primary/10 blur-[120px] rounded-full -z-10">
+        </div>
+
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-24 reveal-on-scroll">
+                <div
+                    class="inline-block px-4 py-1.5 border border-primary/30 rounded-full text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-8 bg-primary/5">
+                    Cinema Grade Production</div>
+                <h2 class="text-5xl lg:text-7xl font-black mb-10 tracking-tighter leading-tight">Every Frame, <span
+                        class="text-primary italic font-light font-serif">Mastered.</span></h2>
+                <p class="text-gray-400 text-xl max-w-2xl mx-auto leading-relaxed">Our courses utilize industry-standard
+                    8K cinema cameras to capture the invisible life of ecosystems—from fungal hyphae to water molecular
+                    flow.</p>
+            </div>
+
+            <div
+                class="relative rounded-[4rem] overflow-hidden shadow-[0_0_80px_rgba(0,0,0,0.8)] reveal-on-scroll aspect-video group cursor-crosshair border border-white/5">
+                <img src="image/cinema_tech_forest.png"
+                    class="w-full h-full object-cover transition-all duration-[3s] group-hover:scale-105 group-hover:brightness-75"
+                    alt="Cinema Camera in Forest">
+
+                <!-- Camera HUD Overlay -->
+                <div
+                    class="absolute inset-0 p-12 pointer-events-none transition-all duration-700 opacity-60 group-hover:opacity-100 group-hover:p-16">
+                    <!-- Top Corners -->
+                    <div
+                        class="flex justify-between items-start font-mono text-[10px] tracking-widest uppercase text-white/80">
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="w-2 h-2 bg-red-600 rounded-full animate-pulse shadow-[0_0_10px_#dc2626]"></span>
+                            <span>REC: 00:42:15:08</span>
+                        </div>
+                        <div class="text-right">
+                            <p>4K | 60 FPS</p>
+                            <p class="text-primary mt-1">RAW 12-BIT</p>
+                        </div>
+                    </div>
+
+                    <!-- Focus Box (Center) -->
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-white/20 flex items-center justify-center">
+                        <div class="w-2 h-2 border border-white/40"></div>
+                        <!-- Corner Markers -->
+                        <div class="absolute top-0 left-0 w-4 h-4 border-t border-l border-white shadow-sm"></div>
+                        <div class="absolute top-0 right-0 w-4 h-4 border-t border-r border-white shadow-sm"></div>
+                        <div class="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-white shadow-sm"></div>
+                        <div class="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-white shadow-sm"></div>
+                    </div>
+
+                    <!-- Bottom Corners -->
+                    <div
+                        class="absolute bottom-12 inset-x-12 flex justify-between items-end font-mono text-[11px] text-white/80">
+                        <div class="flex gap-8">
+                            <div>
+                                <p class="text-[8px] opacity-40 mb-1">ISO</p>
+                                <p class="font-bold">800</p>
+                            </div>
+                            <div>
+                                <p class="text-[8px] opacity-40 mb-1">SHUTTER</p>
+                                <p class="font-bold">1/120</p>
+                            </div>
+                            <div>
+                                <p class="text-[8px] opacity-40 mb-1">IRIS</p>
+                                <p class="font-bold text-primary">f/2.8</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="mb-1">BAT: 88%</p>
+                            <div class="w-16 h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-primary w-[88%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Central Play Button (Appears on Hover) -->
+                <div
+                    class="absolute inset-0 flex items-center justify-center pointer-events-none scale-0 group-hover:scale-100 transition-all duration-500">
+                    <div
+                        class="w-32 h-32 rounded-full bg-white/5 backdrop-blur-3xl border border-white/20 flex items-center justify-center shadow-2xl overflow-hidden group/btn relative">
+                        <div
+                            class="absolute inset-0 bg-primary/20 scale-0 group-hover/btn:scale-100 transition-transform duration-500">
+                        </div>
+                        <i
+                            class="fas fa-play text-4xl text-white relative z-10 transition-transform group-hover/btn:scale-125"></i>
+                    </div>
+                </div>
+
+                <!-- Footer Labels -->
+                <div
+                    class="absolute bottom-12 left-12 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none">
+                    <span
+                        class="bg-primary/20 backdrop-blur-md border border-white/20 px-4 py-1.5 rounded-full text-[9px] font-black tracking-[0.2em] uppercase mb-4 inline-block text-white">Project
+                        Genesis</span>
+                    <h3 class="text-4xl font-black text-white italic drop-shadow-lg">The Hidden Intelligence.</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cinematic Timeline / Our Journey -->
+    <section class="py-40 bg-gray-50 dark:bg-[#0a110d] relative overflow-hidden">
+        <!-- Background Lighting -->
+        <div
+            class="absolute top-1/2 left-0 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 blur-[150px] rounded-full -z-10">
+        </div>
+
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-32 reveal-on-scroll">
+                    <span class="text-secondary font-black uppercase text-xs tracking-[0.4em] mb-6 block">Legacy of
+                        Growth</span>
+                    <h2 class="text-5xl lg:text-7xl font-black text-gray-900 tracking-tighter leading-none">OUR <span
+                            class="text-primary italic font-light font-serif">JOURNEY.</span></h2>
+                </div>
+
+                <div class="relative">
+                    <!-- Central Stem -->
+                    <div
+                        class="absolute left-0 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-200 to-transparent">
+                    </div>
+
+                    <div class="space-y-40">
+                        <!-- 2010 -->
+                        <div class="relative flex flex-col md:flex-row items-center reveal-on-scroll">
+                            <div class="md:w-1/2 md:pr-16 md:text-right mb-12 md:mb-0">
+                                <h3
+                                    class="text-6xl md:text-8xl font-black text-primary mb-4 transition-all hover:scale-105 cursor-default drop-shadow-sm">
+                                    2010</h3>
+                                <h4 class="text-2xl font-bold text-gray-900 mb-4">The Seed is Planted</h4>
+                                <p class="text-gray-500 leading-relaxed max-w-sm md:ml-auto">Founded as a local workshop
+                                    in a small backyard food forest, focused on urban community resilience.</p>
+                            </div>
+                            <div
+                                class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-xl z-10">
+                            </div>
+                            <div class="md:w-1/2 md:pl-16">
+                                <div
+                                    class="rounded-3xl overflow-hidden shadow-2xl skew-y-1 transform hover:skew-y-0 transition-transform duration-700">
+                                    <img src="https://cdn.mos.cms.futurecdn.net/VH2aR5YyvVxLs4QyuXqZUG.jpg"
+                                        class="w-full h-full object-cover" alt="2010">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2018 -->
+                        <div class="relative flex flex-col md:flex-row-reverse items-center reveal-on-scroll">
+                            <div class="md:w-1/2 md:pl-16 mb-12 md:mb-0">
+                                <h3
+                                    class="text-6xl md:text-8xl font-black text-secondary mb-4 transition-all hover:scale-105 cursor-default drop-shadow-sm">
+                                    2018</h3>
+                                <h4 class="text-2xl font-bold text-gray-900 mb-4">The Digital Expansion</h4>
+                                <p class="text-gray-500 leading-relaxed max-w-sm">Transitioning to immersive 4K video
+                                    education, reaching designers across six continents synchronously.</p>
+                            </div>
+                            <div
+                                class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-secondary border-4 border-white shadow-xl z-10">
+                            </div>
+                            <div class="md:w-1/2 md:pr-16">
+                                <div
+                                    class="rounded-3xl overflow-hidden shadow-2xl -skew-y-1 transform hover:skew-y-0 transition-transform duration-700">
+                                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=400&h=300&fit=crop"
+                                        class="w-full h-full object-cover" alt="2018">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2026 -->
+                        <div class="relative flex flex-col md:flex-row items-center reveal-on-scroll">
+                            <div class="md:w-1/2 md:pr-16 md:text-right mb-12 md:mb-0">
+                                <h3
+                                    class="text-6xl md:text-8xl font-black text-primary mb-4 transition-all hover:scale-105 cursor-default drop-shadow-sm">
+                                    2026</h3>
+                                <h4 class="text-2xl font-bold text-gray-900 mb-4">A Global Heritage</h4>
+                                <p class="text-gray-500 leading-relaxed max-w-sm md:ml-auto">Leading the world's largest
+                                    dataset on regenerative projects, with 50,000+ certified design alumni.</p>
+                            </div>
+                            <div
+                                class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-white shadow-xl z-10">
+                            </div>
+                            <div class="md:w-1/2 md:pl-16">
+                                <div
+                                    class="rounded-3xl overflow-hidden shadow-2xl skew-y-1 transform hover:skew-y-0 transition-transform duration-700">
+                                    <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=400&h=300&fit=crop"
+                                        class="w-full h-full object-cover" alt="2026">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Foundation of Stewardship (Ethics & Principles) -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal-on-scroll">
+                <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6 tracking-tighter">Foundation of Stewardship</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg">Rooted in ethical care for the earth and all its inhabitants, guided by systemic design principles.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-8">
+                <!-- Earth Care -->
+                <div class="reveal-on-scroll group">
+                    <div class="h-full bg-green-50 p-8 rounded-[2.5rem] border border-green-100 group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                                <i class="fas fa-globe-americas text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-black text-gray-900 dark:text-gray-900 mb-4 group-hover:text-white transition-colors">Earth Care</h3>
+                            <p class="text-gray-600 dark:text-gray-900 group-hover:text-white/80 transition-colors">Rebuilding biosystems and soil health.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Fair Share -->
+                <div class="reveal-on-scroll group" style="animation-delay: 0.2s">
+                    <div class="h-full bg-green-50 p-8 rounded-[2.5rem] border border-green-100 group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                                <i class="fas fa-hand-holding-heart text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-black text-gray-900 dark:text-gray-900 mb-4 group-hover:text-white transition-colors">Fair Share</h3>
+                            <p class="text-gray-600 dark:text-gray-900 group-hover:text-white/80 transition-colors">Redistributing surplus to benefit all.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 12 Principles -->
+                 
+    </section>
+
+    <!-- Animated Course Cards (THE MASTER PATHWAYS Redesign) -->
+    <section class="py-40 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center md:items-end justify-between mb-24 reveal-on-scroll text-center md:text-left">
+                <div class="max-w-4xl mx-auto md:mx-0">
+                    <span class="text-primary font-black uppercase text-xs tracking-[0.4em] mb-6 block">Our
+                        Curriculum</span>
+                    <h2 class="text-5xl lg:text-8xl font-black text-gray-900 tracking-tighter leading-[0.9]">THE MASTER
+                        PATHWAYS.</h2>
+                </div>
+                <div class="mt-8 md:mt-0">
+                    <a href="courses.html"
+                        class="group flex items-center gap-4 text-gray-900 font-bold uppercase text-[10px] tracking-widest hover:text-primary transition-colors">
+                        View All Modules
+                        <span
+                            class="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all"><i
+                                class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 master-pathways-grid">
+                <!-- Premium Card 1: Food Forest Architect -->
+                <div class="card-premium group reveal-on-scroll relative">
+                    <div
+                        class="relative rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.2)] h-[650px] border border-gray-100">
+                        <img src="image/course_food_forest_architect_hd.png"
+                            class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+                            alt="Food Forest Architect">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent p-12 flex flex-col justify-end">
+                            <div class="mb-4 flex gap-3">
+
+                                <span
+                                    class="bg-primary text-white px-3 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest">Advanced</span>
+                            </div>
+                            <h4 class="text-4xl lg:text-5xl font-black text-white mb-8 leading-none">Food Forest
+                                <br>Architect
+                            </h4>
+                            <div class="flex items-center justify-between border-t border-white/10 pt-8 mt-4">
+                                <div>
+                                    <p class="text-[9px] text-white/50 font-black uppercase tracking-widest mb-1">
+                                        Tuition Fees</p>
+                                    <span class="text-2xl font-black text-white">$299.00</span>
+                                </div>
+                                <a href="single.html"
+                                    class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shadow-xl"><i
+                                        class="fas fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Premium Card 2: Water Nexus Design -->
+                <div class="card-premium group reveal-on-scroll relative" style="animation-delay: 0.1s">
+                    <div
+                        class="relative rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.2)] h-[650px] border border-gray-100">
+                        <img src="image/course_water_nexus_hd.png"
+                            class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+                            alt="Water Nexus Design">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent p-12 flex flex-col justify-end">
+                            <div class="mb-4 flex gap-3">
+                                <span
+                                    class="bg-secondary text-white px-3 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest">Practitioner</span>
+                            </div>
+                            <h4 class="text-4xl lg:text-5xl font-black text-white mb-8 leading-none">Water <br>Nexus
+                                Design</h4>
+                            <div class="flex items-center justify-between border-t border-white/10 pt-8 mt-4">
+                                <div>
+                                    <p class="text-[9px] text-white/50 font-black uppercase tracking-widest mb-1">
+                                        Tuition Fees</p>
+                                    <span class="text-2xl font-black text-white">$249.00</span>
+                                </div>
+                                <a href="single.html"
+                                    class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shadow-xl"><i
+                                        class="fas fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Premium Card 3: Regenerative Soil Work -->
+                <div class="card-premium group reveal-on-scroll relative" style="animation-delay: 0.2s">
+                    <div
+                        class="relative rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-20px_rgba(0,0,0,0.2)] h-[650px] border border-gray-100">
+                        <img src="image/course_soil_regeneration_hd.png"
+                            class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+                            alt="Regenerative Soil Work">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent p-12 flex flex-col justify-end">
+                            <div class="mb-4 flex gap-3">
+                                <span
+                                    class="bg-primary text-white px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">Scientific</span>
+                            </div>
+                            <h4 class="text-4xl lg:text-5xl font-black text-white mb-8 leading-none">Regenerative
+                                <br>Soil Work
+                            </h4>
+                            <div class="flex items-center justify-between border-t border-white/10 pt-8 mt-4">
+                                <div>
+                                    <p class="text-[9px] text-white/50 font-black uppercase tracking-widest mb-1">
+                                        Tuition Fees</p>
+                                    <span class="text-2xl font-black text-white">$199.00</span>
+                                </div>
+                                <a href="single.html"
+                                    class="w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shadow-xl"><i
+                                        class="fas fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Glassmorphism Stats -->
+    <section class="py-32 relative bg-primary overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 text-white reveal-on-scroll">
+                <div class="mobile-center">
+                    <h3 class="text-7xl font-black mb-2">50K+</h3>
+                    <p class="text-white/60 font-black uppercase text-[10px] tracking-[0.3em]">Designers Trained</p>
+                </div>
+                <div class="mobile-center">
+                    <h3 class="text-7xl font-black mb-2">120+</h3>
+                    <p class="text-white/60 font-black uppercase text-[10px] tracking-[0.3em]">Countries Reached</p>
+                </div>
+                <div class="mobile-center">
+                    <h3 class="text-7xl font-black mb-2">4.9</h3>
+                    <p class="text-white/60 font-black uppercase text-[10px] tracking-[0.3em]">Average Rating</p>
+                </div>
+                <div class="mobile-center">
+                    <h3 class="text-7xl font-black mb-2">12M+</h3>
+                    <p class="text-white/60 font-black uppercase text-[10px] tracking-[0.3em]">Carbon Sequestered</p>
+                </div>
+            </div>
+        </div>
+        <!-- Decorations -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+    </section>
+
+    <!-- Success Mosaic (Redesigned Project Showcase) -->
+    <section class="py-40 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-24 reveal-on-scroll">
+                <div
+                    class="inline-block px-4 py-1.5 border border-primary/20 rounded-full text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-6">
+                    Proven Ecosystems</div>
+                <h2 class="text-5xl lg:text-7xl font-black text-gray-900 tracking-tighter mb-8 italic">REAL IMPACT. REAL
+                    PROJECTS.</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg">Our methodology is validated by real-world
+                    implementations across diverse climates and urban environments.</p>
+            </div>
+
+            <!-- Redesigned Grid: 1/1 Mobile, 2/2 Tablet, 4/4 Desktop -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal-on-scroll">
+
+                <!-- Project Card 1 -->
+                <div
+                    class="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4">
+                    <img src="image/project_urban_rooftop_hd.png"
+                        class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+                        alt="Urban Rooftop">
+                    <div
+                        class="absolute inset-x-6 bottom-6 glass p-6 rounded-2xl border border-white/20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                        <p class="text-[10px] font-black text-primary uppercase tracking-widest mb-1">Urban Farming</p>
+                        <h4 class="text-white font-bold text-xl mb-1">Rooftop Oasis</h4>
+                        <p class="text-white/70 text-xs">London, UK • 500sqm</p>
+                    </div>
+                    <div
+                        class="absolute top-6 left-6 bg-black/40 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full text-white text-[9px] font-mono group-hover:bg-primary transition-colors">
+                        #P01-LDN
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div
+                    class="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4">
+                    <img src="image/project_arid_greening_hd.png"
+                        class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+                        alt="Arid Greening">
+                    <div
+                        class="absolute inset-x-6 bottom-6 glass p-6 rounded-2xl border border-white/20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                        <p class="text-[10px] font-black text-primary uppercase tracking-widest mb-1">Arid Recovery</p>
+                        <h4 class="text-white font-bold text-xl mb-1">The Desert Veil</h4>
+                        <p class="text-white/70 text-xs">Wadi Rum, Jordan • 12ha</p>
+                    </div>
+                    <div
+                        class="absolute top-6 left-6 bg-black/40 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full text-white text-[9px] font-mono group-hover:bg-primary transition-colors">
+                        #P42-JOR
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div
+                    class="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4">
+                    <img src="image/food_forest_aerial_mastery.png"
+                        class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+                        alt="Community Forest">
+                    <div
+                        class="absolute inset-x-6 bottom-6 glass p-6 rounded-2xl border border-white/20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                        <p class="text-[10px] font-black text-primary uppercase tracking-widest mb-1">Community Design
+                        </p>
+                        <h4 class="text-white font-bold text-xl mb-1">The Ubuntu Forest</h4>
+                        <p class="text-white/70 text-xs">Cape Town, SA • 2.5ha</p>
+                    </div>
+                    <div
+                        class="absolute top-6 left-6 bg-black/40 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full text-white text-[9px] font-mono group-hover:bg-primary transition-colors">
+                        #P88-ZAF
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div
+                    class="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4">
+                    <img src="image/course_water_harvesting_hd.png"
+                        class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+                        alt="Water Shed">
+                    <div
+                        class="absolute inset-x-6 bottom-6 glass p-6 rounded-2xl border border-white/20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                        <p class="text-[10px] font-black text-primary uppercase tracking-widest mb-1">Water Sovereignty
+                        </p>
+                        <h4 class="text-white font-bold text-xl mb-1">Arroyo Spine</h4>
+                        <p class="text-white/70 text-xs">Arizona, USA • 40ha</p>
+                    </div>
+                    <div
+                        class="absolute top-6 left-6 bg-black/40 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full text-white text-[9px] font-mono group-hover:bg-primary transition-colors">
+                        #P10-USA
+                    </div>
+                </div>
+
+                <!-- Project Card 5 -->
+                <div
+                    class="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4">
+                    <img src="image/project_tropical_amazon_hd.png"
+                        class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+                        alt="Tropical Forest">
+                    <div
+                        class="absolute inset-x-6 bottom-6 glass p-6 rounded-2xl border border-white/20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                        <p class="text-[10px] font-black text-primary uppercase tracking-widest mb-1">Tropical Design
+                        </p>
+                        <h4 class="text-white font-bold text-xl mb-1">Amazon Canopy</h4>
+                        <p class="text-white/70 text-xs">Manaus, Brazil • 5ha</p>
+                    </div>
+                    <div
+                        class="absolute top-6 left-6 bg-black/40 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full text-white text-[9px] font-mono group-hover:bg-primary transition-colors">
+                        #P55-BRA
+                    </div>
+                </div>
+
+                <!-- Project Card 6 -->
+                <div
+                    class="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4">
+                    <img src="image/project_temperate_oregon_hd.png"
+                        class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+                        alt="Temperate Forest">
+                    <div
+                        class="absolute inset-x-6 bottom-6 glass p-6 rounded-2xl border border-white/20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                        <p class="text-[10px] font-black text-primary uppercase tracking-widest mb-1">Temperate Systems
+                        </p>
+                        <h4 class="text-white font-bold text-xl mb-1">Willamette Autumn</h4>
+                        <p class="text-white/70 text-xs">Oregon, USA • 8ha</p>
+                    </div>
+                    <div
+                        class="absolute top-6 left-6 bg-black/40 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full text-white text-[9px] font-mono group-hover:bg-primary transition-colors">
+                        #P22-ORE
+                    </div>
+                </div>
+
+                <!-- Project Card 7 -->
+                <div
+                    class="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4">
+                    <img src="image/course_soil_regeneration_hd.png"
+                        class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+                        alt="Soil Project">
+                    <div
+                        class="absolute inset-x-6 bottom-6 glass p-6 rounded-2xl border border-white/20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                        <p class="text-[10px] font-black text-primary uppercase tracking-widest mb-1">Biological Focus
+                        </p>
+                        <h4 class="text-white font-bold text-xl mb-1">Soil Intelligence</h4>
+                        <p class="text-white/70 text-xs">Field Lab A-1 • Micro-Project</p>
+                    </div>
+                    <div
+                        class="absolute top-6 left-6 bg-black/40 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full text-white text-[9px] font-mono group-hover:bg-primary transition-colors">
+                        #P09-SOIL
+                    </div>
+                </div>
+
+                <!-- Project Card 8 -->
+                <div
+                    class="group relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-700 hover:-translate-y-4">
+                    <img src="image/student_success_gallery_hd.png"
+                        class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110"
+                        alt="Community Project">
+                    <div
+                        class="absolute inset-x-6 bottom-6 glass p-6 rounded-2xl border border-white/20 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                        <p class="text-[10px] font-black text-primary uppercase tracking-widest mb-1">Social
+                            Permaculture</p>
+                        <h4 class="text-white font-bold text-xl mb-1">The Graduate Orchard</h4>
+                        <p class="text-white/70 text-xs">Global Collective • 2026</p>
+                    </div>
+                    <div
+                        class="absolute top-6 left-6 bg-black/40 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full text-white text-[9px] font-mono group-hover:bg-primary transition-colors">
+                        #P99-GRAD
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-100 pt-20 pb-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="mobile-center">
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <img src="image/favicon.png" alt="Logo" class="logo-brand-img">
+                        <span class="logo-brand-text text-primary">Gaia Academy</span>
+                    </a>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Regenerating landscapes and communities
+                        through clinical design.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6">Account</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="login.html" class="hover:text-primary transition-colors">Login</a></li>
+                        <li><a href="signup.html" class="hover:text-primary transition-colors">Register</a></li>
+                        <li><a href="instructor.html" class="hover:text-primary transition-colors">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6">Quick Links</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="courses.html" class="hover:text-primary transition-colors">Course Catalog</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors">Our History</a></li>
+                        <li><a href="testimonial.html" class="hover:text-primary transition-colors">Success Stories</a>
+                        </li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6">Popular Topics</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="#" class="hover:text-primary transition-colors">Urban Gardening</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Water Harvesting</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Animal Integration</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Composting Pro</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="pt-8 border-t border-gray-100 text-center text-gray-400 text-xs">
+                © 2026 Gaia Academy. All rights reserved. Designed with ❤️ for the Earth.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

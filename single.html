@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Forest Design Mastery - Gaia Academy</title>
+    <link rel="icon" type="image/png" href="image/favicon.png">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#14532D',
+                        secondary: '#A16207',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body class="bg-white transition-colors duration-300">
+
+    <!-- Navbar -->
+    <header
+        class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="image/favicon.png" alt="Logo" class="logo-brand-img group-hover:rotate-12 transition-all">
+                <span class="logo-brand-text text-primary">Gaia Academy</span>
+            </a>
+
+            <ul class="hidden xl:flex items-center gap-8 text-gray-700 font-medium">
+                <li><a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                </li>
+                <li><a href="home2.html" class="hover:text-primary transition-colors">Home2</a>
+                </li>
+                <li><a href="about.html" class="hover:text-primary transition-colors">About</a></li>
+                <li><a href="courses.html" class="hover:text-primary transition-colors">Courses</a></li>
+                <li><a href="testimonial.html" class="hover:text-primary transition-colors">Testimonial</a></li>
+                <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+                <li><a href="instructor.html" class="hover:text-primary transition-colors">Dashboard</a></li>
+
+            </ul>
+
+            <!-- CTAs & Toggles -->
+            <div class="flex items-center gap-4">
+                <div class="hidden xl:flex items-center gap-3">
+                    <a href="login.html" class="btn-primary-gaia">Login</a>
+                </div>
+
+                <div class="hidden xl:flex items-center gap-3">
+                    <button class="theme-toggle w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 hover:bg-gray-100 transition-all border border-gray-100">
+                        <i class="fas fa-moon theme-toggle-icon text-primary text-lg"></i>
+                    </button>
+                    <button class="rtl-toggle w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 hover:bg-gray-100 transition-all border border-gray-100">
+                        <i class="fas fa-right-left rtl-toggle-icon text-primary text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <button class="xl:hidden hamburger-btn p-2 text-primary z-[70] relative">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Premium Full-Screen Mobile Menu -->
+        <div id="mobile-menu" class="hidden xl:hidden">
+            <ul class="flex flex-col gap-8 text-center items-center">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="home2.html">Home 2</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="testimonial.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                
+                <li class="pt-8 border-t border-gray-100 w-full flex flex-col gap-3">
+                    <button
+                        class="theme-toggle flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-gray-50 text-gray-900 font-black uppercase tracking-widest text-xs translate-y-0">
+                        <i class="fas fa-moon theme-toggle-icon text-primary text-lg"></i> Appearance
+                    </button>
+                    <button
+                        class="rtl-toggle flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-gray-50 text-gray-900 font-black uppercase tracking-widest text-xs translate-y-0">
+                        <i class="fas fa-right-left rtl-toggle-icon text-primary text-lg"></i> Reading Direction
+                    </button>
+                </li>
+
+                <li class="flex flex-col gap-4 w-full">
+                    <a href="login.html" class="btn-primary-gaia w-full !py-4">Login</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Course Hero -->
+    <section class="pt-32 pb-20 bg-gray-900 text-white relative overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal-on-scroll">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="bg-primary px-4 py-1 rounded-full text-xs font-bold uppercase">Expert Level</span>
+                    <div class="flex flex-col items-center text-center">
+                    <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest mb-6 inline-block">Best Seller</span>
+                    <h1 class="text-4xl lg:text-6xl font-black mb-8 leading-tight">Food Forest <span class="text-primary">Design Mastery</span> 4K</h1>
+                    <div class="flex flex-wrap items-center justify-center gap-6 text-gray-400 text-sm mb-12">
+                        <span class="flex items-center gap-2"><i class="fas fa-signal"></i> Advanced Level</span>
+                        <span class="flex items-center gap-2"><i class="fas fa-clock"></i> 45 Hours</span>
+                        <span class="flex items-center gap-2"><i class="fas fa-closed-captioning"></i> English</span>
+                        <span class="flex items-center gap-2 text-yellow-500 font-bold"><i class="fas fa-star"></i> 4.9 (2,450 Reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-6">
+                        <span class="text-3xl font-black text-primary">$199.99</span>
+                        <a href="login.html" class="btn-primary-gaia">Login to Enroll</a>
+                    </div>
+                </div>
+                </div>
+                <div class="reveal-on-scroll" style="animation-delay: 0.2s">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl aspect-video group cursor-pointer">
+                        <img src="image/food_forest_aerial_mastery.png" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                            <div class="w-20 h-20 rounded-full bg-white text-primary flex items-center justify-center text-2xl animate-pulse">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Background Overlay -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-primary/20 -skew-x-12 translate-x-1/2"></div>
+    </section>
+
+    <!-- Sticky Enroll Bar (Desktop) -->
+    <div class="hidden lg:block sticky top-20 z-40 bg-white border-b border-gray-100 py-4 shadow-sm">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-6">
+                 <h2 class="font-bold">Food Forest Design Mastery</h2>
+                 <div class="h-6 w-px bg-gray-200"></div>
+                 <div class="flex gap-4 text-sm font-medium text-gray-500">
+                    <a href="#about" class="hover:text-primary">About</a>
+                    <a href="#curriculum" class="hover:text-primary">Curriculum</a>
+                    <a href="#instructor" class="hover:text-primary">Instructor</a>
+                    <a href="#reviews" class="hover:text-primary">Reviews</a>
+                 </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <span class="text-3xl font-black text-primary">$199.99</span>
+                <a href="login.html" class="btn-primary-gaia">Login to Enroll</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-3 gap-16">
+                <!-- Left Content -->
+                <div class="lg:col-span-2 space-y-16">
+                    <!-- About -->
+                    <div id="about" class="reveal-on-scroll">
+                        <h3 class="text-3xl font-bold mb-6">Course Description</h3>
+                        <div class="prose max-w-none text-gray-600 leading-relaxed">
+                            <p class="mb-4">Permaculture Food Forest Design is more than just organic gardening. It is a systematic design approach that creates high-yield, low-maintenance landscapes by mimicking the structural layers and ecological relationships of a natural forest.</p>
+                            <p class="mb-4">In this comprehensive masterclass, Oliver Green takes you through the step-by-step process of transitioning any landscape—from a small backyard to a large farm—into a thriving, self-fertilizing food forest.</p>
+                            <div class="grid md:grid-cols-2 gap-8 mt-10">
+                                <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100">
+                                    <h4 class="font-bold mb-4">What you'll learn:</h4>
+                                    <ul class="space-y-3 text-sm">
+                                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> 7 Layers of a Food Forest</li>
+                                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Guild Design & Companion Planting</li>
+                                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Soil Building & Fungal Networks</li>
+                                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Nutrient Cycling & Mulching</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100">
+                                    <h4 class="font-bold mb-4">Requirements:</h4>
+                                    <ul class="space-y-3 text-sm">
+                                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Basic interest in sustainable living</li>
+                                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> A small patch of earth (optional)</li>
+                                        <li class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Beginner design mindset</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Curriculum (Accordion) -->
+                    <div id="curriculum" class="reveal-on-scroll">
+                        <h3 class="text-3xl font-bold mb-8">Course Curriculum</h3>
+                        <div class="accordion border border-gray-100 rounded-3xl overflow-hidden" id="curriculumAccordion">
+                            <div class="accordion-item border-b border-gray-100 bg-transparent">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button bg-gray-50 text-gray-900 font-bold p-6 w-full text-left flex items-center justify-between" type="button" data-bs-toggle="collapse" data-bs-target="#chapter1">
+                                        Chapter 01: Foundations & Evolution
+                                        <span class="text-xs font-normal opacity-60">4 Lessons • 1h 20m</span>
+                                    </button>
+                                </h2>
+                                <div id="chapter1" class="accordion-collapse collapse show" data-bs-parent="#curriculumAccordion">
+                                    <div class="accordion-body bg-white p-0">
+                                        <ul class="divide-y divide-gray-50">
+                                            <li class="p-6 flex items-center justify-between group cursor-pointer hover:bg-gray-50">
+                                                <div class="flex items-center gap-4">
+                                                    <i class="fas fa-play-circle text-primary"></i>
+                                                    <span class="text-sm">Introduction to Forest Mimicry</span>
+                                                </div>
+                                                <span class="text-xs text-secondary font-bold">Preview</span>
+                                            </li>
+                                            <li class="p-6 flex items-center justify-between group cursor-pointer hover:bg-gray-50">
+                                                <div class="flex items-center gap-4">
+                                                    <i class="fas fa-lock text-gray-400"></i>
+                                                    <span class="text-sm">History of Permaculture Design</span>
+                                                </div>
+                                                <span class="text-xs text-gray-400">15:00</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-transparent">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed bg-gray-50 text-gray-900 font-bold p-6 w-full text-left flex items-center justify-between" type="button" data-bs-toggle="collapse" data-bs-target="#chapter2">
+                                        Chapter 02: The Underground Network
+                                        <span class="text-xs font-normal opacity-60">5 Lessons • 3h 10m</span>
+                                    </button>
+                                </h2>
+                                <div id="chapter2" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                                    <div class="accordion-body bg-white p-0 text-center py-10 text-gray-400 text-sm">
+                                        Enroll now to unlock the full curriculum.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reviews -->
+                    <div id="reviews" class="reveal-on-scroll">
+                        <div class="flex items-center justify-between mb-8">
+                             <h3 class="text-3xl font-bold">Student Reviews</h3>
+                             <button class="btn-secondary-gaia">Write a Review</button>
+                        </div>
+                        <div class="space-y-8">
+                             <div class="flex flex-col md:flex-row gap-6 p-8 bg-gray-50 rounded-3xl border border-gray-100">
+                                <img src="https://ui-avatars.com/api/?name=James+M" class="w-16 h-16 rounded-full border-4 border-white shadow-xl flex-shrink-0">
+                                <div>
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <h5 class="font-bold">James Middleton</h5>
+                                        <div class="flex text-yellow-500 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                    </div>
+                                    <p class="text-sm text-gray-500 mb-4">"The video quality is breathtaking. You can actually see the soil microbes under the macro lens! High performance education."</p>
+                                    <div class="flex gap-4 text-xs text-gray-400">
+                                        <span>Helpful? <i class="far fa-thumbs-up cursor-pointer hover:text-primary"></i> 45</span>
+                                        <span>3 weeks ago</span>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar (Desktop Fix) -->
+                <div class="hidden lg:block space-y-8">
+                    <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-xl sticky top-48">
+                        <div id="instructor" class="text-center mb-8">
+                            <h4 class="text-xs font-black uppercase tracking-[0.2em] text-gray-500 mb-6">Master Instructor</h4>
+                            <img src="image/instructor_oliver_hd.png" class="w-32 h-32 rounded-full mx-auto border-4 border-primary mb-6 shadow-2xl object-cover">
+                            <h5 class="text-xl font-bold">Oliver Green</h5>
+                            <p class="text-sm text-primary font-bold mb-4">Gaia Academy Founder</p>
+                            <p class="text-xs text-gray-500 leading-relaxed">PDC instructor since 2005. Designed over 1,200 food forests worldwide.</p>
+                        </div>
+                        <div class="space-y-4 pt-8 border-t border-gray-50">
+                            <ul class="space-y-4 text-xs font-bold text-gray-600">
+                                <li class="flex items-center gap-3"><i class="fas fa-certificate text-primary"></i> PDC Certified</li>
+                                <li class="flex items-center gap-3"><i class="fas fa-user-friends text-primary"></i> 50k+ Students Trained</li>
+                                <li class="flex items-center gap-3"><i class="fas fa-star text-primary"></i> 4.9 Avg Rating</li>
+                            </ul>
+                            <a href="about.html" class="block text-center text-xs font-black text-secondary uppercase tracking-widest pt-4 hover:underline">Full Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Enroll CTA (Fixed) -->
+    <div class="lg:hidden fixed bottom-6 left-6 right-6 z-50">
+        <div class="bg-gray-900 border border-white/10 p-4 rounded-3xl shadow-2xl flex items-center justify-between">
+            <div>
+                <span class="text-white font-black text-xl">$199.99</span>
+                <p class="text-[10px] text-gray-400 font-bold uppercase">Lifetime Access</p>
+            </div>
+            <a href="login.html" class="btn-primary-gaia">Login to Enroll</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t border-gray-100 pt-20 pb-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="mobile-center">
+                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                        <img src="image/favicon.png" alt="Logo" class="logo-brand-img">
+                        <span class="logo-brand-text text-primary">Gaia Academy</span>
+                    </a>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Global educational platform for permaculture design
+                        and sustainable living principles.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6">Quick Links</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="courses.html" class="hover:text-primary transition-colors">Course Catalog</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition-colors">Our History</a></li>
+                        <li><a href="testimonial.html" class="hover:text-primary transition-colors">Success Stories</a>
+                        </li>
+                        <li><a href="contact.html" class="hover:text-primary transition-colors">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-center">
+                    <h5 class="font-bold text-lg mb-6">Popular Topics</h5>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li><a href="#" class="hover:text-primary transition-colors">Urban Gardening</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Water Harvesting</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Animal Integration</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Composting Pro</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="pt-8 border-t border-gray-100 text-center text-gray-400 text-xs">
+                © 2026 Gaia Academy. All rights reserved. Designed with ❤️ for the Earth.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
