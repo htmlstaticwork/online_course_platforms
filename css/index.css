@@ -177,6 +177,14 @@ p {
     letter-spacing: 0.1em !important;
 }
 
+#mobile-menu a.btn-primary-gaia,
+#mobile-menu a.btn-secondary-gaia {
+    color: white !important;
+    font-size: 0.875rem !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+}
+
 #mobile-menu a:hover {
     color: var(--primary-green) !important;
 }
@@ -258,6 +266,11 @@ header nav ul a,
 .dark header nav ul a,
 .dark #mobile-menu a {
     color: var(--primary-green) !important;
+}
+
+.dark #mobile-menu a.btn-primary-gaia,
+.dark #mobile-menu a.btn-secondary-gaia {
+    color: white !important;
 }
 
 header nav ul a:hover, 
